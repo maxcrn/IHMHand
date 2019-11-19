@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-	<children>
-		<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-			<tabs>
-				<Tab text="Ligue1">
-					<content>
-						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="101.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../../../home/16/tdsilva/Documents/M1%20TI/IHM/Images/1280px-Lidlstarligue_logo_2016.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-					</content>
-				</Tab>
-				<Tab text="Ligue2">
-					<content>
-						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-					</content>
-				</Tab>
-			</tabs>
-		</TabPane>
-	</children>
+   <children>
+      <AnchorPane prefHeight="755.0" prefWidth="1004.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="133.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Documents/M1%20TI/IHM/Images/1280px-Lidlstarligue_logo_2016.svg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="129.0" fitWidth="200.0" layoutX="679.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Documents/M1%20TI/IHM/Images/1200px-ProLigue_2016_logo.svg.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="56.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement" />
+            <Text layoutX="847.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Match" />
+            <Text layoutX="641.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement" />
+            <Text layoutX="271.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Match" />
+            <Separator layoutX="499.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="755.0" prefWidth="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
