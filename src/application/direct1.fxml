@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -47,7 +48,7 @@
 		</Pane>
 		<Pane layoutX="523.0" layoutY="155.0" prefHeight="70.0" prefWidth="157.0">
 			<children>
-				<Text fx:id="seconds_chrono" layoutX="71.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+				<Text fx:id="seconds_chrono" layoutX="71.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test">
 					<font>
 						<Font size="40.0" />
 					</font>
@@ -74,5 +75,6 @@
 				</Text>
 			</children>
 		</Pane>
+      <Label fx:id="test" layoutX="584.0" layoutY="338.0" text="testt" />
 	</children>
 </AnchorPane>
