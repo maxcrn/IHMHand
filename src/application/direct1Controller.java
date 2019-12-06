@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.text.Text;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.input.MouseEvent;
@@ -24,7 +25,13 @@ public class direct1Controller {
 	@FXML
 	private Text minutes_chrono;
 	@FXML
-	private Label test;
+	private TableView<String> liste_equipe1;
+	@FXML
+	private TableView<String> liste_equipe2;
+	
+
+///////////   CHRONOMETRE /////////////
+	
 	Timer timer = new Timer();
 	int seconds = 0;
 	int minutes = 0;
@@ -77,4 +84,6 @@ public class direct1Controller {
 	public void changeText(Text text, String newTxt){
 		text.setText(newTxt);
 	}
+	
+
 }
