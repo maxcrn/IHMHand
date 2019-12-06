@@ -140,5 +140,7 @@
             </Text>
          </children>
       </Pane>
+      <Button fx:id="tempsMortAnnuleD" layoutX="1012.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#PressAnnuleTM2" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #a10000;" text="Annuler" textFill="WHITE" visible="false" />
+      <Button fx:id="tempsMortAnnuleG" layoutX="70.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#PressAnnuleTM1" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #a10000;" text="Annuler" textFill="WHITE" visible="false" />
 	</children>
 </AnchorPane>

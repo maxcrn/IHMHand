@@ -106,7 +106,7 @@ public class direct1Controller {
 	@FXML
 	private Text seconds_tm, minutes_tm;
 	@FXML
-	private Button tempsMortD, tempsMortG;
+	private Button tempsMortD, tempsMortG, tempsMortAnnuleD, tempsMortAnnuleG;
 	@FXML
 	private Pane tmPane;
 	@FXML
@@ -123,6 +123,8 @@ public class direct1Controller {
 	public void pressTM1(MouseEvent event) {
 		startTM();
 		TMEquipe1 --;
+		tempsMortG.setVisible(false);
+		tempsMortAnnuleG.setVisible(true);
 		if(TMEquipe1 == 2) {
 			tm1Equipe1.setVisible(false);
 		}
@@ -138,6 +140,8 @@ public class direct1Controller {
 	public void pressTM2(MouseEvent event) {
 		startTM();
 		TMEquipe2 --;
+		tempsMortD.setVisible(false);
+		tempsMortAnnuleD.setVisible(true);
 		if(TMEquipe2 == 2) {
 			tm1Equipe2.setVisible(false);
 		}
@@ -174,17 +178,59 @@ public class direct1Controller {
         		minutesTM ++;
             	changeText(minutes_tm, "0" + Integer.toString(minutesTM));
         	}
-        	if(secondsTM == 2) {
-        		secondsTM = 0;
-        		minutesTM = 0;
-        		startChrono();
-        		tmPane.setVisible(false);
-        		changeText(seconds_tm, "0" + Integer.toString(secondsTM));
-        		changeText(minutes_tm, "0" + Integer.toString(minutesTM));
-        		execTM.shutdown();
+        	if(secondsTM == 5) {
+        		FinTM();
         	}
         }
     };
+    
+    public void FinTM() {
+    	secondsTM = 0;
+		minutesTM = 0;
+		startChrono();
+		tmPane.setVisible(false);
+		changeText(seconds_tm, "0" + Integer.toString(secondsTM));
+		changeText(minutes_tm, "0" + Integer.toString(minutesTM));
+		execTM.shutdown();
+		tempsMortAnnuleD.setVisible(false);
+		tempsMortAnnuleG.setVisible(false);
+    	tempsMortD.setVisible(true);
+    	tempsMortG.setVisible(true);
+    }
+    
+    public void PressAnnuleTM1(MouseEvent event) {
+    	tempsMortAnnuleG.setVisible(false);
+    	tempsMortG.setVisible(true);
+    	TMEquipe1++;
+    	if(TMEquipe1 == 3) {
+			tm1Equipe1.setVisible(true);
+		}
+		else if(TMEquipe1 == 2) {
+			tm2Equipe1.setVisible(true);
+		}
+		else if(TMEquipe1 == 1) {
+			tm3Equipe1.setVisible(true);
+			tempsMortG.setDisable(false);
+		}
+    	FinTM();
+    }
+    
+    public void PressAnnuleTM2(MouseEvent event) {
+    	tempsMortAnnuleD.setVisible(false);
+    	tempsMortD.setVisible(true);
+    	TMEquipe2++;
+    	if(TMEquipe2 == 3) {
+			tm1Equipe2.setVisible(true);
+		}
+		else if(TMEquipe2 == 2) {
+			tm2Equipe2.setVisible(true);
+		}
+		else if(TMEquipe2 == 1) {
+			tm3Equipe2.setVisible(true);
+			tempsMortD.setDisable(false);
+		}
+    	FinTM();
+    }
 	
 
 }
