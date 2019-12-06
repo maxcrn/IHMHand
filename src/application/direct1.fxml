@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1174.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1174.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
 	<children>
 		<Pane layoutX="431.0" prefHeight="155.0" prefWidth="312.0">
 			<children>
@@ -48,12 +48,12 @@
 						<Font size="40.0" />
 					</font>
 				</Text>
-				<ImageView fx:id="start_chrono" fitHeight="33.0" fitWidth="25.0" layoutX="127.0" layoutY="7.0" onMouseClicked="#startChrono" pickOnBounds="true" preserveRatio="true">
+				<ImageView fx:id="start_chrono" fitHeight="33.0" fitWidth="25.0" layoutX="127.0" layoutY="20.0" onMouseClicked="#pressStart" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../../Images/bouton-play.png" />
 					</image>
 				</ImageView>
-				<ImageView fx:id="pause_chrono" fitHeight="33.0" fitWidth="25.0" layoutX="127.0" layoutY="34.0" onMouseClicked="#pauseChrono" pickOnBounds="true" preserveRatio="true">
+				<ImageView fx:id="pause_chrono" fitHeight="33.0" fitWidth="25.0" layoutX="127.0" layoutY="21.0" onMouseClicked="#pressPause" pickOnBounds="true" preserveRatio="true" scaleX="0.0">
 					<image>
 						<Image url="@../../Images/bouton-pause.png" />
 					</image>
@@ -70,8 +70,8 @@
 				</Text>
 			</children>
 		</Pane>
-      <Button layoutX="1012.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
-      <Button layoutX="70.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
+      <Button fx:id="tempsMortD" layoutX="1012.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#startTM" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
+      <Button fx:id="tempsMortG" layoutX="70.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#startTM" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
       <Text layoutX="32.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" />
       <Text layoutX="974.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" />
       <TableView fx:id="liste_equipe1" layoutX="9.0" layoutY="254.0" prefHeight="559.0" prefWidth="233.0">
@@ -86,5 +86,29 @@
             <TableColumn prefWidth="119.0" text="Titualaires" />
          </columns>
       </TableView>
+      <Pane fx:id="tmPane" layoutX="470.0" layoutY="214.0" prefHeight="39.0" prefWidth="263.0" visible="false">
+         <children>
+            <Text fx:id="seconds_tm" fill="#a10000" layoutX="217.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text fx:id="minutes_tm" fill="#a10000" layoutX="176.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#a10000" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps-Mort">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#a10000" layoutX="208.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
 	</children>
 </AnchorPane>
