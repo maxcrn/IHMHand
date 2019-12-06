@@ -1,15 +1,12 @@
 package application;
 
-
-
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import javafx.fxml.FXML;
 
 import javafx.scene.text.Text;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 
@@ -32,7 +29,7 @@ public class direct1Controller {
 
 ///////////   CHRONOMETRE /////////////
 	
-	Timer timer = new Timer();
+	private ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
 	int seconds = 0;
 	int minutes = 0;
 	boolean paused = false;
@@ -42,22 +39,23 @@ public class direct1Controller {
 	@FXML
 	public void startChrono(MouseEvent event) {
 	    if(paused) {
-	    	this.timer = new Timer();
-	    	timer.scheduleAtFixedRate(task,0,1000);
+	    	exec = Executors.newSingleThreadScheduledExecutor();
+	    	exec.scheduleAtFixedRate(stopWatch,0,1000,TimeUnit.MILLISECONDS);
 	    }
 	    else {
-	    	timer.scheduleAtFixedRate(task,0,1000);
+	    	exec.scheduleAtFixedRate(stopWatch,0,1000,TimeUnit.MILLISECONDS);
 	    }
 	}
 	
 	@FXML
 	public void pauseChrono(MouseEvent event) {
-		timer.cancel();
+		exec.shutdown();
 		paused = true;
 	}
 	
-	TimerTask task = new TimerTask() {
-        @Override
+	
+	final Runnable stopWatch = new Runnable() {
+		
         public void run() {
         	
         	seconds++;
