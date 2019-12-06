@@ -35,7 +35,7 @@ public class direct1Controller {
 	@FXML
 	public void startChrono(MouseEvent event) {
 	    if(paused) {
-	    	Timer timer = new Timer();
+	    	this.timer = new Timer();
 	    	timer.scheduleAtFixedRate(task,0,1000);
 	    }
 	    else {
