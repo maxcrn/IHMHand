@@ -15,24 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class direct1Controller {
-	@FXML
-	private Text seconds_chrono;
-	@FXML
-	private ImageView start_chrono;
-	@FXML
-	private ImageView pause_chrono;
-	@FXML
-	private Text minutes_chrono;
-	@FXML
-	private Text seconds_tm;
-	@FXML
-	private Text minutes_tm;
-	@FXML
-	private Button tempsMortD;
-	@FXML
-	private Button tempsMortG;
-	@FXML
-	private Pane tmPane;
+	
 	@FXML
 	private TableView<String> liste_equipe1;
 	@FXML
@@ -40,6 +23,11 @@ public class direct1Controller {
 	
 
 ///////////  CHRONOMETRE  /////////////
+	
+	@FXML
+	private Text seconds_chrono, minutes_chrono;
+	@FXML
+	private ImageView start_chrono, pause_chrono;
 	
 	private ScheduledExecutorService execSW = Executors.newSingleThreadScheduledExecutor();
 	int seconds = 0;
@@ -114,18 +102,62 @@ public class direct1Controller {
 	
 	// TEMPS MORTS //
 	
+	
+	@FXML
+	private Text seconds_tm, minutes_tm;
+	@FXML
+	private Button tempsMortD, tempsMortG;
+	@FXML
+	private Pane tmPane;
+	@FXML
+	private ImageView tm1Equipe1, tm2Equipe1, tm3Equipe1, tm1Equipe2, tm2Equipe2, tm3Equipe2;
+	
+	
 	private int secondsTM = 0;
 	private int minutesTM = 0;
 	private ScheduledExecutorService execTM;
+	// A changer avec Equipe.TempsMort
+	private int TMEquipe1 = 3;
+	private int TMEquipe2 = 3;
 	
-	public void startTM(MouseEvent event) {
+	public void pressTM1(MouseEvent event) {
+		startTM();
+		TMEquipe1 --;
+		if(TMEquipe1 == 2) {
+			tm1Equipe1.setVisible(false);
+		}
+		else if(TMEquipe1 == 1) {
+			tm2Equipe1.setVisible(false);
+		}
+		else if(TMEquipe1 == 0) {
+			tm3Equipe1.setVisible(false);
+			tempsMortG.setDisable(true);
+		}
+	}
+	
+	public void pressTM2(MouseEvent event) {
+		startTM();
+		TMEquipe2 --;
+		if(TMEquipe2 == 2) {
+			tm1Equipe2.setVisible(false);
+		}
+		else if(TMEquipe2 == 1) {
+			tm2Equipe2.setVisible(false);
+		}
+		else if(TMEquipe2 == 0) {
+			tm3Equipe2.setVisible(false);
+			tempsMortD.setDisable(true);
+		}
+	}
+	
+	public void startTM() {
 		tmPane.setVisible(true);
 		execTM = Executors.newSingleThreadScheduledExecutor();
 		execTM.scheduleAtFixedRate(stopWatchTM,1000,1000,TimeUnit.MILLISECONDS);
 		pauseChrono();
 	}
 	
-final Runnable stopWatchTM = new Runnable() {
+	final Runnable stopWatchTM = new Runnable() {
 		
         public void run() {
         	
