@@ -13,12 +13,12 @@
          <children>
             <ImageView fitHeight="122.0" fitWidth="200.0" layoutX="133.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Documents/M1%20TI/IHM/Images/1280px-Lidlstarligue_logo_2016.svg.png" />
+                  <Image url="@../../Images/1280px-Lidlstarligue_logo_2016.svg.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="129.0" fitWidth="200.0" layoutX="679.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Documents/M1%20TI/IHM/Images/1200px-ProLigue_2016_logo.svg.png" />
+                  <Image url="@../../Images/1200px-ProLigue_2016_logo.svg.png" />
                </image>
             </ImageView>
             <Text layoutX="56.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement" />
