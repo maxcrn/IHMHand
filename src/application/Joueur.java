@@ -12,8 +12,9 @@ public class Joueur extends Personne {
 	private String numero;
 	
 	//Constructeur
-	public Joueur (String nom, String prenom, String equipe, String numero) {
+	public Joueur (String nom, String prenom, String equipe, String numero, boolean titulaire) {
 		super(nom,prenom);
+		this.titulaire = titulaire;
 		this.equipe = equipe;
 		this.numero = numero;
 		this.carton_bleu = 0;

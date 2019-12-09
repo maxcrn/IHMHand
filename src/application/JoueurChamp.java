@@ -6,8 +6,8 @@ public class JoueurChamp extends Joueur {
 	private int buts;
 	
 	//Constructeur
-	public JoueurChamp(String nom, String prenom, String equipe, String numero) {
-		super(nom, prenom, equipe, numero);
+	public JoueurChamp(String nom, String prenom, String equipe, String numero, boolean titulaire) {
+		super(nom, prenom, equipe, numero, titulaire);
 		this.tirs = 0;
 		this.buts = 0;
 	}
