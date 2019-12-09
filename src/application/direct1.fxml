@@ -100,8 +100,8 @@
 				</Text>
 			</children>
 		</Pane>
-      <Button fx:id="tempsMortD" layoutX="1012.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM2" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
-      <Button fx:id="tempsMortG" layoutX="70.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM1" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
+      <Button fx:id="tempsMortD" disable="true" layoutX="1012.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM2" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
+      <Button fx:id="tempsMortG" disable="true" layoutX="70.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM1" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" />
       <Text layoutX="32.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" />
       <Text layoutX="974.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" />
       <TableView fx:id="liste_equipe1" layoutX="9.0" layoutY="254.0" prefHeight="559.0" prefWidth="233.0">

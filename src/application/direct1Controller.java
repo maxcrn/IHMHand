@@ -41,6 +41,8 @@ public class direct1Controller {
 	}
 	
 	public void startChrono() {
+		tempsMortD.setDisable(false);
+		tempsMortG.setDisable(false);
 		if(paused) {
 	    	execSW = Executors.newSingleThreadScheduledExecutor();
 	    	execSW.scheduleAtFixedRate(stopWatch,1000,1000,TimeUnit.MILLISECONDS);
@@ -65,6 +67,8 @@ public class direct1Controller {
 	public void pauseChrono() {
 		execSW.shutdown();
 		paused = true;
+		tempsMortD.setDisable(true);
+		tempsMortG.setDisable(true);
 	}
 	
 	
@@ -125,6 +129,7 @@ public class direct1Controller {
 		TMEquipe1 --;
 		tempsMortG.setVisible(false);
 		tempsMortAnnuleG.setVisible(true);
+		tempsMortD.setDisable(true);
 		if(TMEquipe1 == 2) {
 			tm1Equipe1.setVisible(false);
 		}
@@ -142,6 +147,7 @@ public class direct1Controller {
 		TMEquipe2 --;
 		tempsMortD.setVisible(false);
 		tempsMortAnnuleD.setVisible(true);
+		tempsMortG.setDisable(true);
 		if(TMEquipe2 == 2) {
 			tm1Equipe2.setVisible(false);
 		}
@@ -180,6 +186,7 @@ public class direct1Controller {
         	}
         	if(secondsTM == 5) {
         		FinTM();
+        		
         	}
         }
     };
@@ -196,6 +203,8 @@ public class direct1Controller {
 		tempsMortAnnuleG.setVisible(false);
     	tempsMortD.setVisible(true);
     	tempsMortG.setVisible(true);
+    	tempsMortD.setDisable(false);
+    	tempsMortG.setDisable(false);
     }
     
     public void PressAnnuleTM1(MouseEvent event) {
