@@ -250,7 +250,6 @@ public class direct1Controller {
     
     public void FinTMAnnule() {
     	seconds += secondsTM;
-    	System.out.println(seconds + " " + secondsTM);
     	if(seconds > 60) {
     		secondsTemp = seconds-60;
     		seconds = secondsTemp;
@@ -273,14 +272,9 @@ public class direct1Controller {
     	db.setContent(content);
     	
     	event.consume();
-<<<<<<< HEAD
-    }*/  
-=======
-    }*/
-    
+
     private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
-    
->>>>>>> origin/master
-    
+
+    */
 
 }
