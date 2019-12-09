@@ -4,14 +4,19 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 
 public class direct1Controller {
@@ -240,6 +245,28 @@ public class direct1Controller {
 		}
     	FinTM();
     }
-	
+    
+///////////  Liste des joueurs  /////////////
+	/*
+    @FXML
+	private Text text;
+    
+    public void dragtest(MouseEvent event) {
+    	System.out.println("coucou");
+    	Dragboard db = text.startDragAndDrop(TransferMode.MOVE);
+    	
+    	ClipboardContent content = new ClipboardContent();
+    	content.putString(text.getId());
+    	db.setContent(content);
+    	
+    	event.consume();
+    }*/
+    
+    private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
+    
+    public void RemplirTableau() {
+    	joueurData.add(new Joueur("BERCOT", "Julien", "Hoegaarden", "69"));
+    }
+    
 
 }
