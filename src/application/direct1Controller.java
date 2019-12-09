@@ -89,16 +89,16 @@ public class direct1Controller {
         	else if(seconds < 60) {
         		changeText(seconds_chrono, Integer.toString(seconds));
         	}
-        	else if(seconds == 60){
+        	else if(seconds >= 60){
         		seconds = 0;
         		changeText(seconds_chrono, "00");
         		minutes ++;
-        		if(minutes < 10) {
-            		changeText(minutes_chrono, "0" + Integer.toString(minutes));
-    			}
-            	else{
-            		changeText(minutes_chrono, Integer.toString(minutes));
-            	}
+        	}
+        	if(minutes < 10) {
+        		changeText(minutes_chrono, "0" + Integer.toString(minutes));
+			}
+        	else{
+        		changeText(minutes_chrono, Integer.toString(minutes));
         	}
         }
     };
@@ -124,6 +124,7 @@ public class direct1Controller {
 	
 	private int secondsTM = 0;
 	private int minutesTM = 0;
+	private int secondsTemp = 0;
 	private ScheduledExecutorService execTM;
 	// A changer avec Equipe.TempsMort
 	private int TMEquipe1 = 3;
@@ -226,7 +227,7 @@ public class direct1Controller {
 			tm3Equipe1.setVisible(true);
 			tempsMortG.setDisable(false);
 		}
-    	FinTM();
+    	FinTMAnnule();
     }
     
     public void PressAnnuleTM2(MouseEvent event) {
@@ -243,6 +244,18 @@ public class direct1Controller {
 			tm3Equipe2.setVisible(true);
 			tempsMortD.setDisable(false);
 		}
+    	FinTMAnnule();
+    }
+    
+    
+    public void FinTMAnnule() {
+    	seconds += secondsTM;
+    	System.out.println(seconds + " " + secondsTM);
+    	if(seconds > 60) {
+    		secondsTemp = seconds-60;
+    		seconds = secondsTemp;
+    		minutes++;
+    	}
     	FinTM();
     }
     
@@ -264,9 +277,6 @@ public class direct1Controller {
     
     private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
     
-    public void RemplirTableau() {
-    	joueurData.add(new Joueur("BERCOT", "Julien", "Hoegaarden", "69"));
-    }
     
 
 }
