@@ -3,24 +3,19 @@ package application;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 
 public class direct1Controller {
+	
+	@FXML
+	public void initialize() {
+		System.out.println("cccccccezoirezopri");
+	}
 	
 
 ///////////  CHRONOMETRE  /////////////
@@ -272,18 +267,7 @@ public class direct1Controller {
 <<<<<<< HEAD
     }*/ 
     
-	@FXML
-	private TableView<Joueur> liste_equipe1;
-	@FXML
-	private TableColumn<JoueurChamp, String> remplacant_eq1;
-	@FXML
-	private TableColumn<JoueurChamp, String> titulaires_eq1;
-	
-	@FXML
-	private TableView<Joueur> liste_equipe2;
-
-
-    private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
+    
 
 
 

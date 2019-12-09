@@ -1,7 +1,5 @@
 package application;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class Joueur extends Personne {
 	
@@ -10,14 +8,14 @@ public class Joueur extends Personne {
 	private int carton_bleu;
 	private int carton_jaune;
 	private int deux_min;
-	private final StringProperty equipe;
-	private final StringProperty numero;
+	private String equipe;
+	private String numero;
 	
 	//Constructeur
 	public Joueur (String nom, String prenom, String equipe, String numero) {
 		super(nom,prenom);
-		this.equipe = new SimpleStringProperty(equipe);
-		this.numero = new SimpleStringProperty(numero);
+		this.equipe = equipe;
+		this.numero = numero;
 		this.carton_bleu = 0;
 		this.carton_rouge = 0;
 		this.carton_jaune = 0;
@@ -64,20 +62,20 @@ public class Joueur extends Personne {
 		this.deux_min = deux_min;
 	}
 
-	public StringProperty getEquipe() {
+	public String getEquipe() {
 		return equipe;
 	}
 
 	public void setEquipe(String equipe) {
-		this.equipe.set(equipe);
+		this.equipe = equipe;
 	}
 
-	public StringProperty getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
 	public void setNumero(String numero) {
-		this.numero.set(numero);
+		this.numero = numero;
 	}
 
 	
