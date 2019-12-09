@@ -16,6 +16,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 	 	joueurData.add(new JoueurChamp("BERCOT", "Julien", "Hoegaarden", "69"));
+	 	joueurData.add(new JoueurChamp("CARIN", "Maxime", "Hoegaarden", "22"));
 	 	
 		try {
 			primaryStage.setScene(new javafx.scene.Scene(javafx.fxml.FXMLLoader.load(getClass().getResource("accueil.fxml"))));
@@ -27,5 +28,9 @@ public class Main extends Application {
 		
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public ObservableList<JoueurChamp> getJoueurChampData(){
+		return joueurData;
 	}
 }

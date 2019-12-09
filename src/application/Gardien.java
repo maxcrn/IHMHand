@@ -1,7 +1,6 @@
 package application;
 
 
-
 public class Gardien extends Joueur {
 	
 	private int arrets;

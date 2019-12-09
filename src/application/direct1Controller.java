@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -20,11 +21,6 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 
 public class direct1Controller {
-	
-	@FXML
-	private TableView<String> liste_equipe1;
-	@FXML
-	private TableView<String> liste_equipe2;
 	
 
 ///////////  CHRONOMETRE  /////////////
@@ -273,14 +269,19 @@ public class direct1Controller {
     	db.setContent(content);
     	
     	event.consume();
-<<<<<<< HEAD
-    }*/  
-=======
-    }*/
+
+    }*/ 
     
+	@FXML
+	private TableView<Joueur> liste_equipe1;
+	@FXML
+	private TableColumn<JoueurChamp, String> remplacant_eq1;
+	
+	@FXML
+	private TableView<Joueur> liste_equipe2;
+
     private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
-    
->>>>>>> origin/master
+
     
 
 }

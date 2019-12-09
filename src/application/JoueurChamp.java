@@ -1,11 +1,5 @@
 package application;
 
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 public class JoueurChamp extends Joueur {
 	
 	private int tirs;
