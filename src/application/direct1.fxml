@@ -107,7 +107,7 @@
       <TableView fx:id="liste_equipe1" layoutX="9.0" layoutY="254.0" prefHeight="559.0" prefWidth="233.0">
         <columns>
           <TableColumn fx:id="remplacant_eq1" prefWidth="111.0" text="Remplaçants" />
-          <TableColumn prefWidth="119.0" text="Titualaires" />
+          <TableColumn fx:id="titulaires_eq1" prefWidth="119.0" text="Titualaires" />
         </columns>
       </TableView>
       <TableView fx:id="liste_equipe2" layoutX="927.0" layoutY="249.0" prefHeight="559.0" prefWidth="233.0">
