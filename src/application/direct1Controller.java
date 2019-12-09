@@ -260,13 +260,7 @@ public class direct1Controller {
     	db.setContent(content);
     	
     	event.consume();
-    }*/
-    
-    private ObservableList<JoueurChamp> joueurData = FXCollections.observableArrayList();
-    
-    public void RemplirTableau() {
-    	joueurData.add(new Joueur("BERCOT", "Julien", "Hoegaarden", "69"));
-    }
+    }*/  
     
 
 }

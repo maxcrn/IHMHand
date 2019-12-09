@@ -1,27 +1,30 @@
 package application;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Personne {
-	private String nom;
-	private String prenom;
+	private final StringProperty nom;
+	private final StringProperty prenom;
 	
 	public Personne(String nom, String prenom) {
-		this.setNom(nom);
-		this.setPrenom(prenom);
+		this.nom = new SimpleStringProperty(nom);
+		this.prenom = new SimpleStringProperty(prenom);
 	}
 	
-	public String getNom() {
+	public StringProperty getNom() {
 		return nom;
 	}
 
 	public void setNom(String nom) {
-		this.nom = nom;
+		this.nom.set(nom);
 	}
 
-	public String getPrenom() {
+	public StringProperty getPrenom() {
 		return prenom;
 	}
 
 	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+		this.prenom.set(prenom);
 	}
 }
