@@ -17,7 +17,7 @@ public class Match {
 	
 	public Match(Equipe domicile, Equipe visiteur, Personne arbitre1, Personne arbitre2, Personne secretaire, Personne chronometreur, Personne delegue, Date dateRencontre) {
 		this.score_eq1 = "0";
-		this.score_eq1 = "1";
+		this.score_eq1 = "0";
 		this.setDomicile(domicile);
 		this.setVisiteur(visiteur);
 		this.setArbitre1(arbitre1);
