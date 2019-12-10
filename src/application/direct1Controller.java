@@ -392,7 +392,13 @@ public class direct1Controller {
     
     Joueur joueurSelectionne;
     @FXML
-    private ImageView cartonEq1;
+    private ImageView cartonEq1, addRedCard;
+    @FXML
+    private Pane cardsPane;
+    @FXML
+    private Text testCarton;
+    
+    private Text joueurSelectionne_Text;
     
     public void selectionJoueur(MouseEvent event) {
     	
@@ -401,6 +407,7 @@ public class direct1Controller {
     	for(i = 0; i < 14; i++) {
 			if(textClick.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
 				joueurSelectionne = tituJoueur[i];
+				joueurSelectionne_Text = tituText[i];
 				System.out.println(joueurSelectionne.getNom());
 				cartonEq1.setDisable(false);
 			}
@@ -413,12 +420,40 @@ public class direct1Controller {
     	}
     }
     
+///////////  Cartons : rouge, jaune et bleu /////////////     
     public void cartonEq1_Click(MouseEvent event) {
     	if(joueurSelectionne.getEquipe().getNomEquipe().equals(equipe1.getNomEquipe())) {
     		System.out.println(joueurSelectionne.getNom());
-    		
+    		cardsPane.setVisible(true);
+    		addRedCard.setDisable(false);
     		
     	}
     }
+    
+    public void addRedCard_Click(MouseEvent event) {
+    	System.out.println("redcard");
+    	for(i = 0; i < 14; i++) {
+    		if(joueurSelectionne_Text == tituText[i]) {
+    			System.out.println("j'essaie de changer");
+    			//tituText[i].setStyle("-fx-highlight-fill: red;");
+    			//testCarton.setStyle("-fx-highlight-fill: red;");
+    			//testCarton.getStyleClass().add("-fx-highlight-fill: red;");
+    			//testCarton.setId("redcardtext");
+    			
+    		}
+    	}
+    	//joueurSelectionne_Text.setStyle("-fx-highlight-fill: red;");
+    	// Incrémenter le setCarton_rouge
+    }
+    
+    /*public void addYellowCard_Click(MouseEvent event) {
+    	System.out.println("yellowcard");
+    	// Incrémenter le setCarton_jaune
+    }
+    
+    public void addBlueCard_Click(MouseEvent event) {
+    	System.out.println("bluecard");
+    	// Incrémenter le setCarton_bleu
+    }*/
 
 }
