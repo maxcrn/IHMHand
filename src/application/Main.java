@@ -16,6 +16,7 @@ public class Main extends Application {
 		try {
 			primaryStage.setScene(new javafx.scene.Scene(javafx.fxml.FXMLLoader.load(getClass().getResource("accueil.fxml"))));
 			primaryStage.show();
+			primaryStage.setMaximized(true);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

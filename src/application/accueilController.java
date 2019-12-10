@@ -27,6 +27,7 @@ public class accueilController {
         stage.setTitle("Direct LIDL StarLigue");
         stage.setScene(scene);
         stage.show();
+        stage.setMaximized(true);
 		
 	}
 }
