@@ -284,37 +284,43 @@ public class direct1Controller {
 	@FXML
 	private AnchorPane rempEqu1, rempEqu2, tituEqu1, tituEqu2;
 	
-	// Liste joueurs equipe 1
-	Joueur titu11 = new Gardien("SEGO", "Marin", "Montpellier", "1", true);
-	Joueur remp11 = new Gardien("BONNEFOI", "Kevin", "Montpellier", "12", false);
-	Joueur titu12 = new JoueurChamp("AFGOUR", "Benjamin", "Montpellier", "33", true);
-	Joueur titu13 = new JoueurChamp("BOS", "Julien", "Montpellier", "13", true);
-	Joueur titu14 = new JoueurChamp("DUARTE", "Gilberto", "Montpellier", "90", true);
-	Joueur titu15 = new JoueurChamp("GUIRAUDOU", "Paul Louis", "Montpellier", "2", true);
-	Joueur titu16 = new JoueurChamp("LENNE", "Yanis", "Montpellier", "32", true);
-	Joueur titu17 = new JoueurChamp("MENGON", "Marco", "Montpellier", "15", true);
-	Joueur remp12 = new JoueurChamp("PETTERSSON", "Frederic", "Montpellier", "18", false);
-	Joueur remp13 = new JoueurChamp("PORTE", "Valentin", "Montpellier", "28", false);
-	Joueur remp14 = new JoueurChamp("RICHARDSON", "Melvyn", "Montpellier", "22", false);
-	Joueur remp15 = new JoueurChamp("SIMONET", "Diego", "Montpellier", "4", false);
-	Joueur remp16 = new JoueurChamp("SOUSSI", "Mohammed", "Montpellier", "39", false);
-	Joueur remp17 = new JoueurChamp("GREBILLE", "Mathieu", "Montpellier", "10", false);
+	Personne entraineur1 = new Personne("CANAYER", "Patrice");
+	Equipe equipe1 = new Equipe("Montpellier", entraineur1, "LidlStarligue");
 	
+	// Liste joueurs equipe 1
+	Joueur titu11 = new Gardien("SEGO", "Marin", equipe1, "1", true);
+	Joueur remp11 = new Gardien("BONNEFOI", "Kevin", equipe1, "12", false);
+	Joueur titu12 = new JoueurChamp("AFGOUR", "Benjamin", equipe1, "33", true);
+	Joueur titu13 = new JoueurChamp("BOS", "Julien", equipe1, "13", true);
+	Joueur titu14 = new JoueurChamp("DUARTE", "Gilberto", equipe1, "90", true);
+	Joueur titu15 = new JoueurChamp("GUIRAUDOU", "Paul Louis", equipe1, "2", true);
+	Joueur titu16 = new JoueurChamp("LENNE", "Yanis", equipe1, "32", true);
+	Joueur titu17 = new JoueurChamp("MENGON", "Marco", equipe1, "15", true);
+	Joueur remp12 = new JoueurChamp("PETTERSSON", "Frederic", equipe1, "18", false);
+	Joueur remp13 = new JoueurChamp("PORTE", "Valentin", equipe1, "28", false);
+	Joueur remp14 = new JoueurChamp("RICHARDSON", "Melvyn", equipe1, "22", false);
+	Joueur remp15 = new JoueurChamp("SIMONET", "Diego", equipe1, "4", false);
+	Joueur remp16 = new JoueurChamp("SOUSSI", "Mohammed", equipe1, "39", false);
+	Joueur remp17 = new JoueurChamp("GREBILLE", "Mathieu", equipe1, "10", false);
+	
+	
+	Personne entraineur2 = new Personne("GARDENT", "Philippe");
+	Equipe equipe2 = new Equipe("Toulouse", entraineur2, "LidlStarligue");
 	// Liste joueurs equipe 2
-	Joueur titu21 = new Gardien("LETTENS", "Jef", "Toulouse", "1", true);
-	Joueur remp21 = new Gardien("GEHIN", "Theo", "Toulouse", "12", false);
-	Joueur titu22 = new JoueurChamp("LEVENTOUX", "Remi", "Toulouse", "2", true);
-	Joueur titu23 = new JoueurChamp("CHELLE", "Pierrick", "Toulouse", "3", true);
-	Joueur titu24 = new JoueurChamp("OLSSON", "Markus", "Toulouse", "4", true);
-	Joueur titu25 = new JoueurChamp("GARCIA", "Arnau", "Toulouse", "9", true);
-	Joueur titu26 = new JoueurChamp("GILBERT", "Maxime", "Toulouse", "10", true);
-	Joueur titu27 = new JoueurChamp("SOLE", "Ferran", "Toulouse", "14", true);
-	Joueur remp22 = new JoueurChamp("ILIC", "Nemanja", "Toulouse", "19", false);
-	Joueur remp23 = new JoueurChamp("STEINS", "Luc", "Toulouse", "22", false);
-	Joueur remp24 = new JoueurChamp("TRIBILLON", "Gael", "Toulouse", "33", false);
-	Joueur remp25 = new JoueurChamp("BONILAURI", "Jordan", "Toulouse", "47", false);
-	Joueur remp26 = new JoueurChamp("ABDI", "Ayoub", "Toulouse", "87", false);
-	Joueur remp27 = new JoueurChamp("GIRAUDEAU", "Romain", "Toulouse", "11", false);
+	Joueur titu21 = new Gardien("LETTENS", "Jef", equipe2, "1", true);
+	Joueur remp21 = new Gardien("GEHIN", "Theo", equipe2, "12", false);
+	Joueur titu22 = new JoueurChamp("LEVENTOUX", "Remi", equipe2, "2", true);
+	Joueur titu23 = new JoueurChamp("CHELLE", "Pierrick", equipe2, "3", true);
+	Joueur titu24 = new JoueurChamp("OLSSON", "Markus", equipe2, "4", true);
+	Joueur titu25 = new JoueurChamp("GARCIA", "Arnau", equipe2, "9", true);
+	Joueur titu26 = new JoueurChamp("GILBERT", "Maxime", equipe2, "10", true);
+	Joueur titu27 = new JoueurChamp("SOLE", "Ferran", equipe2, "14", true);
+	Joueur remp22 = new JoueurChamp("ILIC", "Nemanja", equipe2, "19", false);
+	Joueur remp23 = new JoueurChamp("STEINS", "Luc", equipe2, "22", false);
+	Joueur remp24 = new JoueurChamp("TRIBILLON", "Gael", equipe2, "33", false);
+	Joueur remp25 = new JoueurChamp("BONILAURI", "Jordan", equipe2, "47", false);
+	Joueur remp26 = new JoueurChamp("ABDI", "Ayoub", equipe2, "87", false);
+	Joueur remp27 = new JoueurChamp("GIRAUDEAU", "Romain", equipe2, "11", false);
 	
 	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
 	Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
@@ -383,18 +389,35 @@ public class direct1Controller {
     }
     
 ///////////  Liste des joueurs actions : 2 mins, cartons et tirs /////////////    
-
+    
+    Joueur joueurSelectionne;
+    @FXML
+    private ImageView cartonEq1;
+    
     public void selectionJoueur(MouseEvent event) {
     	
     	Text textClick = (Text) event.getSource();
-    	Joueur joueurSelectionne;
-    	System.out.println("coucou");
+    	
     	for(i = 0; i < 14; i++) {
-			if(textClick.getText().substring(6).equals(tituJoueur[i].getNom())) {
+			if(textClick.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
 				joueurSelectionne = tituJoueur[i];
-				
-				System.out.println(joueurSelectionne.isTitulaire());
+				System.out.println(joueurSelectionne.getNom());
+				cartonEq1.setDisable(false);
 			}
+			else if(textClick.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())) {
+				joueurSelectionne = rempJoueur[i];
+				System.out.println(joueurSelectionne.getNom());
+				cartonEq1.setDisable(false);
+			}
+			
+    	}
+    }
+    
+    public void cartonEq1_Click(MouseEvent event) {
+    	if(joueurSelectionne.getEquipe().getNomEquipe().equals(equipe1.getNomEquipe())) {
+    		System.out.println(joueurSelectionne.getNom());
+    		
+    		
     	}
     }
 

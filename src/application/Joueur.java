@@ -8,11 +8,11 @@ public class Joueur extends Personne {
 	private int carton_bleu;
 	private int carton_jaune;
 	private int deux_min;
-	private String equipe;
+	private Equipe equipe;
 	private String numero;
 	
 	//Constructeur
-	public Joueur (String nom, String prenom, String equipe, String numero, boolean titulaire) {
+	public Joueur (String nom, String prenom, Equipe equipe, String numero, boolean titulaire) {
 		super(nom,prenom);
 		this.titulaire = titulaire;
 		this.equipe = equipe;
@@ -63,11 +63,11 @@ public class Joueur extends Personne {
 		this.deux_min = deux_min;
 	}
 
-	public String getEquipe() {
+	public Equipe getEquipe() {
 		return equipe;
 	}
 
-	public void setEquipe(String equipe) {
+	public void setEquipe(Equipe equipe) {
 		this.equipe = equipe;
 	}
 

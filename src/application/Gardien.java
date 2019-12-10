@@ -8,7 +8,7 @@ public class Gardien extends Joueur {
 	private int buts;
 	
 	//Constructeur
-	public Gardien(String nom, String prenom, String equipe, String numero, boolean titulaire) {
+	public Gardien(String nom, String prenom, Equipe equipe, String numero, boolean titulaire) {
 		super(nom, prenom, equipe, numero, titulaire);
 		this.arrets = 0;
 		this.buts = 0;

@@ -6,7 +6,7 @@ public class JoueurChamp extends Joueur {
 	private int buts;
 	
 	//Constructeur
-	public JoueurChamp(String nom, String prenom, String equipe, String numero, boolean titulaire) {
+	public JoueurChamp(String nom, String prenom, Equipe equipe, String numero, boolean titulaire) {
 		super(nom, prenom, equipe, numero, titulaire);
 		this.tirs = 0;
 		this.buts = 0;
