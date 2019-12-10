@@ -320,8 +320,7 @@ public class direct1Controller {
 
 
     public void dragDetected(MouseEvent event) {
-    	Joueur tituRemp;
-    	Joueur rempTitu;
+    	
     	Text textDragged = (Text) event.getSource();
     	
     	/* allow any transfer mode */
@@ -330,18 +329,8 @@ public class direct1Controller {
         /* put a string on dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(textDragged.getText());
-        System.out.println(textDragged.getText());
+        System.out.println(textDragged.getText().substring(3));
         db.setContent(content);
-    	
-    	
-    	for(i = 0; i < 14; i++) {
-			if(textDragged.getText().substring(2) == tituJoueur[i].getNom()) {
-				tituRemp = tituJoueur[i];
-			}
-			else if(textDragged.getText().substring(2) == rempJoueur[i].getNom()){
-				rempTitu = rempJoueur[i];
-			}
-		}
     }
     
     public void dragOver(DragEvent event) {
@@ -354,6 +343,8 @@ public class direct1Controller {
     
     public void dragDropped(DragEvent event) {
     	
+    	Joueur tituRemp;
+    	Joueur rempTitu;
     	Text target = (Text) event.getGestureTarget();
     	Text source = (Text) event.getGestureSource();
     	String tempTxt = target.getText();
@@ -362,6 +353,31 @@ public class direct1Controller {
         if (db.hasString()) {
             target.setText(db.getString());
         }
+        
+        for(i = 0; i < 14; i++) {
+			if(source.getText().substring(3).equals(tituJoueur[i].getNom())) {
+				tituRemp = tituJoueur[i];
+				tituRemp.setTitulaire(!tituRemp.isTitulaire());
+				System.out.println(tituRemp.isTitulaire());
+			}
+			else if(source.getText().substring(3).equals(rempJoueur[i].getNom())){
+				rempTitu = rempJoueur[i];
+				rempTitu.setTitulaire(!rempTitu.isTitulaire());
+				System.out.println(rempTitu.isTitulaire());
+			}
+		}
+        for(i = 0; i < 14; i++) {
+			if(target.getText().substring(3).equals(tituJoueur[i].getNom())) {
+				tituRemp = tituJoueur[i];
+				tituRemp.setTitulaire(!tituRemp.isTitulaire());
+				System.out.println(tituRemp.isTitulaire());
+			}
+			else if(target.getText().substring(3).equals(rempJoueur[i].getNom())){
+				rempTitu = rempJoueur[i];
+				rempTitu.setTitulaire(!rempTitu.isTitulaire());
+				System.out.println(rempTitu.isTitulaire());
+			}
+		}
     }
     
     
