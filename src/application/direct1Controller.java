@@ -322,7 +322,9 @@ public class direct1Controller {
 	Joueur remp26 = new JoueurChamp("ABDI", "Ayoub", equipe2, "87", false);
 	Joueur remp27 = new JoueurChamp("GIRAUDEAU", "Romain", equipe2, "11", false);
 	
+	@FXML
 	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
+	@FXML
 	Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
 	Joueur[] rempJoueur = {remp11, remp12, remp13, remp14, remp15, remp16, remp17, remp21, remp22, remp23, remp24, remp25, remp26, remp27};
 	Joueur[] tituJoueur = {titu11, titu12, titu13, titu14, titu15, titu16, titu17, titu21, titu22, titu23, titu24, titu25, titu26, titu27};
@@ -337,7 +339,6 @@ public class direct1Controller {
         /* put a string on dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(textDragged.getText());
-        System.out.println(textDragged.getText().substring(3));
         db.setContent(content);
     }
     
@@ -350,71 +351,90 @@ public class direct1Controller {
     }
     
     public void dragDropped(DragEvent event) {
-    	
-    	Joueur tituRemp;
-    	Joueur rempTitu;
+    	Joueur tituRemp = titu11;
+    	Joueur rempTitu = titu21;
     	Text target = (Text) event.getGestureTarget();
     	Text source = (Text) event.getGestureSource();
-    	String tempTxt = target.getText();
-    	source.setText(tempTxt);
-    	Dragboard db = event.getDragboard();
-        if (db.hasString()) {
-            target.setText(db.getString());
-        }
+    	
         
         for(i = 0; i < 14; i++) {
-			if(source.getText().substring(3).equals(tituJoueur[i].getNom())) {
+			if(source.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
 				tituRemp = tituJoueur[i];
-				tituRemp.setTitulaire(!tituRemp.isTitulaire());
-				System.out.println(tituRemp.isTitulaire());
 			}
-			else if(source.getText().substring(3).equals(rempJoueur[i].getNom())){
+			else if(source.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())){
 				rempTitu = rempJoueur[i];
-				rempTitu.setTitulaire(!rempTitu.isTitulaire());
-				System.out.println(rempTitu.isTitulaire());
 			}
 		}
         for(i = 0; i < 14; i++) {
-			if(target.getText().substring(3).equals(tituJoueur[i].getNom())) {
+			if(target.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
 				tituRemp = tituJoueur[i];
-				tituRemp.setTitulaire(!tituRemp.isTitulaire());
-				System.out.println(tituRemp.isTitulaire());
 			}
-			else if(target.getText().substring(3).equals(rempJoueur[i].getNom())){
+			else if(target.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())){
 				rempTitu = rempJoueur[i];
-				rempTitu.setTitulaire(!rempTitu.isTitulaire());
-				System.out.println(rempTitu.isTitulaire());
 			}
 		}
+        
+        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire()) {
+        	tituRemp.setTitulaire(!tituRemp.isTitulaire());
+        	rempTitu.setTitulaire(!rempTitu.isTitulaire());
+        	String tempTxt = target.getText();
+        	source.setText(tempTxt);
+        	Dragboard db = event.getDragboard();
+            if (db.hasString()) {
+                target.setText(db.getString());
+            }
+        }
     }
     
 ///////////  Liste des joueurs actions : 2 mins, cartons et tirs /////////////    
     
     Joueur joueurSelectionne;
     @FXML
-    private ImageView cartonEq1, addRedCard;
+    private ImageView cartonEq1, deuxMinEq1, tirEq1, cartonEq2, deuxMinEq2, tirEq2, addRedCard;
     @FXML
     private Pane cardsPane;
     @FXML
     private Text testCarton;
-    
+    @FXML
     private Text joueurSelectionne_Text;
     
     public void selectionJoueur(MouseEvent event) {
     	
     	Text textClick = (Text) event.getSource();
+    	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
+    	Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
     	
     	for(i = 0; i < 14; i++) {
 			if(textClick.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
 				joueurSelectionne = tituJoueur[i];
-				joueurSelectionne_Text = tituText[i];
-				System.out.println(joueurSelectionne.getNom());
+				if(textClick.getText().equals(tituText[i].getText())) {
+					joueurSelectionne_Text = tituText[i];
+				}
+				else if(textClick.getText().equals(rempText[i].getText())) {
+					joueurSelectionne_Text = rempText[i];
+				}
 				cartonEq1.setDisable(false);
+				deuxMinEq1.setDisable(false);
+				tirEq1.setDisable(false);
+				cartonEq2.setDisable(false);
+				deuxMinEq2.setDisable(false);
+				tirEq2.setDisable(false);
 			}
 			else if(textClick.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())) {
 				joueurSelectionne = rempJoueur[i];
+				if(textClick.getText().equals(tituText[i].getText())) {
+					joueurSelectionne_Text = tituText[i];
+				}
+				else if(textClick.getText().equals(rempText[i].getText())) {
+					joueurSelectionne_Text = rempText[i];
+				}
 				System.out.println(joueurSelectionne.getNom());
 				cartonEq1.setDisable(false);
+				deuxMinEq1.setDisable(false);
+				tirEq1.setDisable(false);
+				cartonEq2.setDisable(false);
+				deuxMinEq2.setDisable(false);
+				tirEq2.setDisable(false);
 			}
 			
     	}
@@ -456,4 +476,122 @@ public class direct1Controller {
     	// Incrémenter le setCarton_bleu
     }*/
 
+    
+    
+    ///// 2 MINUTES /////
+    
+    
+    @FXML
+    private Text deuxMinEq1Min, deuxMinEq1Sec, deuxMinEq2Min, deuxMinEq2Sec;
+    @FXML
+    private Pane deuxMinEq1Pane, deuxMinEq2Pane;
+    
+    private ScheduledExecutorService exec2MinEq1, exec2MinEq2;
+    private int seconds2MinEq1, minutes2MinEq1, seconds2MinEq2, minutes2MinEq2;
+    
+    Joueur joueurDeuxMinEq1, joueurDeuxMinEq2;
+    @FXML
+    Text joueurDeuxMinEq1Text, joueurDeuxMinEq2Text;
+    
+    public void deuxMinEq1Click(MouseEvent event) {
+    	joueurDeuxMinEq1 = joueurSelectionne;
+    	joueurDeuxMinEq1Text = joueurSelectionne_Text;
+    	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min()+1);
+    	start2Min();
+    	cartonEq1.setDisable(true);
+		deuxMinEq1.setDisable(true);
+		tirEq1.setDisable(true);
+		joueurDeuxMinEq1Text.setDisable(true);
+    }
+    
+    public void deuxMinEq2Click(MouseEvent event) {
+    	joueurDeuxMinEq2 = joueurSelectionne;
+    	joueurDeuxMinEq2Text = joueurSelectionne_Text;
+    	joueurDeuxMinEq2.setDeux_min(joueurDeuxMinEq2.getDeux_min()+1);
+    	start2Min();
+    	cartonEq2.setDisable(true);
+		deuxMinEq2.setDisable(true);
+		tirEq2.setDisable(true);
+		joueurDeuxMinEq2Text.setDisable(true);
+    }
+    
+    private void start2Min() {
+    	if(joueurSelectionne.getEquipe() == equipe1) {
+    		deuxMinEq1Pane.setVisible(true);
+        	exec2MinEq1 = Executors.newSingleThreadScheduledExecutor();
+        	exec2MinEq1.scheduleAtFixedRate(stopWatchDeuxMinEq1,1000,1000,TimeUnit.MILLISECONDS);
+    	}
+    	else if(joueurSelectionne.getEquipe() == equipe2){
+    		deuxMinEq2Pane.setVisible(true);
+        	exec2MinEq2 = Executors.newSingleThreadScheduledExecutor();
+        	exec2MinEq2.scheduleAtFixedRate(stopWatchDeuxMinEq2,1000,1000,TimeUnit.MILLISECONDS);
+    	}
+    }
+    
+    private void Fin2MinEq1() {
+    	seconds2MinEq1 = 0;
+    	minutes2MinEq1 = 0;
+		deuxMinEq1Pane.setVisible(false);
+		changeText(deuxMinEq1Sec, "0" + Integer.toString(seconds2MinEq1));
+		changeText(deuxMinEq1Min, "0" + Integer.toString(minutes2MinEq1));
+		exec2MinEq1.shutdown();
+		joueurDeuxMinEq1Text.setDisable(false);
+    }
+    
+    private void Fin2MinEq2() {
+    	seconds2MinEq2 = 0;
+    	minutes2MinEq2 = 0;
+		deuxMinEq2Pane.setVisible(false);
+		changeText(deuxMinEq2Sec, "0" + Integer.toString(seconds2MinEq1));
+		changeText(deuxMinEq2Min, "0" + Integer.toString(minutes2MinEq1));
+		exec2MinEq2.shutdown();
+		joueurDeuxMinEq2Text.setDisable(false);
+    }
+    
+    
+    final Runnable stopWatchDeuxMinEq1 = new Runnable() {
+		
+        public void run() {
+    		seconds2MinEq1++;
+        	if(seconds2MinEq1 < 10) {
+        		changeText(deuxMinEq1Sec, "0" + Integer.toString(seconds2MinEq1));
+			}
+        	else if(seconds2MinEq1 < 60) {
+        		changeText(deuxMinEq1Sec, Integer.toString(seconds2MinEq1));
+        	}
+        	else if(seconds2MinEq1 == 60){
+        		seconds2MinEq1 = 0;
+        		changeText(deuxMinEq1Sec, "00");
+        		minutes2MinEq1 ++;
+            	changeText(deuxMinEq1Min, "0" + Integer.toString(minutes2MinEq1));
+        	}
+        	if(seconds2MinEq1 == 5) {
+        		Fin2MinEq1();
+        		
+        	}
+        }
+    };
+    
+    final Runnable stopWatchDeuxMinEq2 = new Runnable() {
+		
+        public void run() {
+    		seconds2MinEq2++;
+        	if(seconds2MinEq2 < 10) {
+        		changeText(deuxMinEq2Sec, "0" + Integer.toString(seconds2MinEq2));
+			}
+        	else if(seconds2MinEq2 < 60) {
+        		changeText(deuxMinEq2Sec, Integer.toString(seconds2MinEq2));
+        	}
+        	else if(seconds2MinEq2 == 60){
+        		seconds2MinEq2 = 0;
+        		changeText(deuxMinEq2Sec, "00");
+        		minutes2MinEq2 ++;
+            	changeText(deuxMinEq2Min, "0" + Integer.toString(minutes2MinEq2));
+        	}
+        	if(seconds2MinEq2 == 5) {
+        		Fin2MinEq2();
+        	}
+        }
+    };
+    
 }
