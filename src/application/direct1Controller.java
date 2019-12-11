@@ -682,6 +682,8 @@ public class direct1Controller {
     private Text deuxMinEq1Min, deuxMinEq1Sec, deuxMinEq2Min, deuxMinEq2Sec;
     @FXML
     private Pane deuxMinEq1Pane, deuxMinEq2Pane;
+    @FXML
+    private Button annuler2MinutesEq2, annuler2MinutesEq1;
     
     private ScheduledExecutorService exec2MinEq1, exec2MinEq2;
     private int seconds2MinEq1, minutes2MinEq1, seconds2MinEq2, minutes2MinEq2;
@@ -718,12 +720,14 @@ public class direct1Controller {
     		deuxMinEq1Pane.setVisible(true);
         	exec2MinEq1 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq1.scheduleAtFixedRate(stopWatchDeuxMinEq1,1000,1000,TimeUnit.MILLISECONDS);
+        	annuler2MinutesEq1.setVisible(true);
     	}
     	else if(joueurSelectionne.getEquipe() == equipe2){
     		deuxMinEnCoursEq2 = true;
     		deuxMinEq2Pane.setVisible(true);
         	exec2MinEq2 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq2.scheduleAtFixedRate(stopWatchDeuxMinEq2,1000,1000,TimeUnit.MILLISECONDS);
+        	annuler2MinutesEq2.setVisible(true);
     	}
     }
     
@@ -736,6 +740,7 @@ public class direct1Controller {
 		changeText(deuxMinEq1Min, "0" + Integer.toString(minutes2MinEq1));
 		exec2MinEq1.shutdown();
 		joueurDeuxMinEq1Text.setDisable(false);
+		annuler2MinutesEq1.setVisible(false);
     }
     
     private void Fin2MinEq2() {
@@ -747,8 +752,18 @@ public class direct1Controller {
 		changeText(deuxMinEq2Min, "0" + Integer.toString(minutes2MinEq1));
 		exec2MinEq2.shutdown();
 		joueurDeuxMinEq2Text.setDisable(false);
+		annuler2MinutesEq2.setVisible(false);
     }
     
+    public void annuler2MinutesEq1Click() {
+    	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min() - 1);
+    	Fin2MinEq1();
+    }
+    
+    public void annuler2MinutesEq2Click() {
+    	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min() - 1);
+    	Fin2MinEq2();
+    }
     
     final Runnable stopWatchDeuxMinEq1 = new Runnable() {
 		
