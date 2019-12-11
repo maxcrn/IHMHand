@@ -52,6 +52,9 @@ public class direct1Controller {
 	int minutes = 0;
 	boolean paused = false;
 	
+	boolean deuxMinEnCoursEq1 = false;
+	boolean deuxMinEnCoursEq2 = false;
+	
 	// Bouton start du chrono
 	@FXML
 	public void pressStart(MouseEvent event) {
@@ -66,6 +69,14 @@ public class direct1Controller {
 	    	execSW.scheduleAtFixedRate(stopWatch,1000,1000,TimeUnit.MILLISECONDS);
 	    	start_chrono.setScaleX(0);
 	    	pause_chrono.setScaleX(1);
+	    	if(deuxMinEnCoursEq1) {
+	    		exec2MinEq1 = Executors.newSingleThreadScheduledExecutor();
+	    		exec2MinEq1.scheduleAtFixedRate(stopWatchDeuxMinEq1,1000,1000,TimeUnit.MILLISECONDS);
+	    	}
+	    	if(deuxMinEnCoursEq2) {
+	    		exec2MinEq2 = Executors.newSingleThreadScheduledExecutor();
+	    		exec2MinEq2.scheduleAtFixedRate(stopWatchDeuxMinEq2,1000,1000,TimeUnit.MILLISECONDS);
+	    	}
 	    }
 	    else {
 	    	execSW.scheduleAtFixedRate(stopWatch,1000,1000,TimeUnit.MILLISECONDS);
@@ -87,6 +98,12 @@ public class direct1Controller {
 		paused = true;
 		tempsMortD.setDisable(true);
 		tempsMortG.setDisable(true);
+		if(deuxMinEnCoursEq1) {
+			exec2MinEq1.shutdown();
+		}
+		if(deuxMinEnCoursEq2) {
+			exec2MinEq2.shutdown();
+		}
 	}
 	
 	
@@ -267,6 +284,23 @@ public class direct1Controller {
     		secondsTemp = seconds-60;
     		seconds = secondsTemp;
     		minutes++;
+    	}
+    	
+    	if(deuxMinEnCoursEq1) {
+    		seconds2MinEq1 += secondsTM;
+    		if(seconds2MinEq1 > 60) {
+        		secondsTemp = seconds2MinEq1-60;
+        		seconds2MinEq1 = secondsTemp;
+        		minutes2MinEq1++;
+        	}
+    	}
+    	if(deuxMinEnCoursEq2) {
+    		seconds2MinEq2 += secondsTM;
+    		if(seconds2MinEq2 > 60) {
+        		secondsTemp = seconds2MinEq2-60;
+        		seconds2MinEq2 = secondsTemp;
+        		minutes2MinEq2++;
+        	}
     	}
     	FinTM();
     }
@@ -600,7 +634,7 @@ public class direct1Controller {
 		joueurSelectionne_Text.setFill(Color.BLACK);
 		annulerCartonJaune1.setVisible(false);
 		annulerCartonJaune2.setVisible(false);
-    }
+	}
     
     public void addBlueCard_Click(MouseEvent event) {
 		Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
@@ -680,11 +714,13 @@ public class direct1Controller {
     
     private void start2Min() {
     	if(joueurSelectionne.getEquipe() == equipe1) {
+    		deuxMinEnCoursEq1 = true;
     		deuxMinEq1Pane.setVisible(true);
         	exec2MinEq1 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq1.scheduleAtFixedRate(stopWatchDeuxMinEq1,1000,1000,TimeUnit.MILLISECONDS);
     	}
     	else if(joueurSelectionne.getEquipe() == equipe2){
+    		deuxMinEnCoursEq2 = true;
     		deuxMinEq2Pane.setVisible(true);
         	exec2MinEq2 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq2.scheduleAtFixedRate(stopWatchDeuxMinEq2,1000,1000,TimeUnit.MILLISECONDS);
@@ -694,6 +730,7 @@ public class direct1Controller {
     private void Fin2MinEq1() {
     	seconds2MinEq1 = 0;
     	minutes2MinEq1 = 0;
+    	deuxMinEnCoursEq1 = false;
 		deuxMinEq1Pane.setVisible(false);
 		changeText(deuxMinEq1Sec, "0" + Integer.toString(seconds2MinEq1));
 		changeText(deuxMinEq1Min, "0" + Integer.toString(minutes2MinEq1));
@@ -704,6 +741,7 @@ public class direct1Controller {
     private void Fin2MinEq2() {
     	seconds2MinEq2 = 0;
     	minutes2MinEq2 = 0;
+    	deuxMinEnCoursEq2 = false;
 		deuxMinEq2Pane.setVisible(false);
 		changeText(deuxMinEq2Sec, "0" + Integer.toString(seconds2MinEq1));
 		changeText(deuxMinEq2Min, "0" + Integer.toString(minutes2MinEq1));
