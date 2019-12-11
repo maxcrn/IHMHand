@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class direct1Controller {
 	
@@ -374,7 +375,7 @@ public class direct1Controller {
 			}
 		}
         
-        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire()) {
+        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 && rempTitu.getCarton_rouge() == 0) {
         	tituRemp.setTitulaire(!tituRemp.isTitulaire());
         	rempTitu.setTitulaire(!rempTitu.isTitulaire());
         	String tempTxt = target.getText();
@@ -397,7 +398,11 @@ public class direct1Controller {
     private Text testCarton;
     @FXML
     private Text joueurSelectionne_Text;
+    @FXML
+    private Button annulerCartonRouge1, annulerCartonRouge2;
     
+    
+    // Selection du joueur au click
     public void selectionJoueur(MouseEvent event) {
     	
     	Text textClick = (Text) event.getSource();
@@ -413,12 +418,26 @@ public class direct1Controller {
 				else if(textClick.getText().equals(rempText[i].getText())) {
 					joueurSelectionne_Text = rempText[i];
 				}
-				cartonEq1.setDisable(false);
-				deuxMinEq1.setDisable(false);
-				tirEq1.setDisable(false);
-				cartonEq2.setDisable(false);
-				deuxMinEq2.setDisable(false);
-				tirEq2.setDisable(false);
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0) {
+					cartonEq1.setDisable(false);
+					deuxMinEq1.setDisable(false);
+					tirEq1.setDisable(false);
+					annulerCartonRouge1.setVisible(false);
+					annulerCartonRouge2.setVisible(false);
+				}
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 1) {
+					annulerCartonRouge1.setVisible(true);
+				}
+				else if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0) {
+					cartonEq2.setDisable(false);
+					deuxMinEq2.setDisable(false);
+					tirEq2.setDisable(false);
+					annulerCartonRouge1.setVisible(false);
+					annulerCartonRouge2.setVisible(false);
+				}
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 1) {
+					annulerCartonRouge2.setVisible(true);
+				}
 			}
 			else if(textClick.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())) {
 				joueurSelectionne = rempJoueur[i];
@@ -429,16 +448,31 @@ public class direct1Controller {
 					joueurSelectionne_Text = rempText[i];
 				}
 				System.out.println(joueurSelectionne.getNom());
-				cartonEq1.setDisable(false);
-				deuxMinEq1.setDisable(false);
-				tirEq1.setDisable(false);
-				cartonEq2.setDisable(false);
-				deuxMinEq2.setDisable(false);
-				tirEq2.setDisable(false);
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0) {
+					cartonEq1.setDisable(false);
+					deuxMinEq1.setDisable(false);
+					tirEq1.setDisable(false);
+					annulerCartonRouge1.setVisible(false);
+					annulerCartonRouge2.setVisible(false);
+				}
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 1) {
+					annulerCartonRouge1.setVisible(true);
+				}
+				else if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0) {
+					cartonEq2.setDisable(false);
+					deuxMinEq2.setDisable(false);
+					tirEq2.setDisable(false);
+					annulerCartonRouge1.setVisible(false);
+					annulerCartonRouge2.setVisible(false);
+				}
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 1) {
+					annulerCartonRouge2.setVisible(true);
+				}
 			}
 			
     	}
     }
+    
     
 ///////////  Cartons : rouge, jaune et bleu /////////////     
     public void cartonEq1_Click(MouseEvent event) {
@@ -451,19 +485,41 @@ public class direct1Controller {
     }
     
     public void addRedCard_Click(MouseEvent event) {
-    	System.out.println("redcard");
+    	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
+    	Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
     	for(i = 0; i < 14; i++) {
     		if(joueurSelectionne_Text == tituText[i]) {
-    			System.out.println("j'essaie de changer");
-    			//tituText[i].setStyle("-fx-highlight-fill: red;");
-    			//testCarton.setStyle("-fx-highlight-fill: red;");
-    			//testCarton.getStyleClass().add("-fx-highlight-fill: red;");
-    			//testCarton.setId("redcardtext");
-    			
+    			joueurSelectionne_Text.setFill(Color.RED);
+    			joueurSelectionne.setCarton_rouge(joueurSelectionne.getCarton_rouge() + 1);
+    			cartonEq1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+				cartonEq2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
     		}
     	}
+		for(i = 0; i < 14; i++) {
+    		if(joueurSelectionne_Text == rempText[i]) {
+    			joueurSelectionne_Text.setFill(Color.RED);
+    			joueurSelectionne.setCarton_rouge(joueurSelectionne.getCarton_rouge() + 1);
+    			cartonEq1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+    			cartonEq2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
+    		}
+		}
     	//joueurSelectionne_Text.setStyle("-fx-highlight-fill: red;");
     	// Incrémenter le setCarton_rouge
+    }
+    
+    public void cartonRougeAnnule(MouseEvent event) {
+    	joueurSelectionne.setCarton_rouge(joueurSelectionne.getCarton_rouge() - 1);
+		joueurSelectionne_Text.setFill(Color.BLACK);
+		annulerCartonRouge1.setVisible(false);
+		annulerCartonRouge2.setVisible(false);
     }
     
     /*public void addYellowCard_Click(MouseEvent event) {
