@@ -293,43 +293,53 @@
         </AnchorPane>
       </items>
     </SplitPane>
-    <ImageView fx:id="tirEq1" disable="true" fitHeight="108.0" fitWidth="124.0" layoutX="121.0" layoutY="847.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../Images/ball.png" />
-      </image>
-    </ImageView>
-    <ImageView fx:id="deuxMinEq1" disable="true" fitHeight="108.0" fitWidth="124.0" layoutX="256.0" layoutY="847.0" onMouseClicked="#deuxMinEq1Click" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../Images/deuxmin.png" />
-      </image>
-    </ImageView>
-    <ImageView fx:id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" layoutX="1698.0" layoutY="847.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../Images/ball.png" />
-      </image>
-    </ImageView>
-    <ImageView fx:id="deuxMinEq2" disable="true" fitHeight="108.0" fitWidth="124.0" layoutX="1572.0" layoutY="847.0" onMouseClicked="#deuxMinEq2Click" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../../Images/deuxmin.png" />
-      </image>
-    </ImageView>
+    <Button id="" fx:id="tirEq2" layoutX="1708.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" prefWidth="122.54998779296875" text="">
+      <graphic>
+        <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../Images/ball.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button id="" fx:id="deuxMinEq2" layoutX="1559.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq2Click" prefWidth="108.0" text="">
+      <graphic>
+        <ImageView id="deuxMinEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../Images/deuxmin.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
     <Pane fx:id="cardsPane1" layoutY="703.0" prefHeight="137.0" prefWidth="399.0" AnchorPane.leftAnchor="43.0">
       <children>
-        <ImageView fx:id="addRedCard1" fitHeight="125.0" fitWidth="123.0" layoutX="30.0" layoutY="14.0" onMouseClicked="#addRedCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/redcardV2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="addYellowCard1" fitHeight="125.0" fitWidth="123.0" layoutX="153.0" layoutY="14.0" onMouseClicked="#addYellowCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/yellowcardV2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="addBlueCard1" fitHeight="125.0" fitWidth="123.0" layoutX="276.0" layoutY="14.0" onMouseClicked="#addBlueCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/bluecard.png" />
-          </image>
-        </ImageView>
+        <Button id="" fx:id="addRedCard1" contentDisplay="CENTER" layoutX="14.0" layoutY="4.0" minWidth="95.015625" mnemonicParsing="false" onMouseClicked="#addRedCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="addRedCard1" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/redcardV2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button fx:id="addYellowCard1" layoutX="146.0" layoutY="4.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addYellowCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="addYellowCard1" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/yellowcardV2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button id="" fx:id="addBlueCard1" layoutX="277.0" layoutY="4.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addBlueCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/bluecard.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
       </children>
     </Pane>
     <Pane fx:id="deuxMinEq1Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" visible="false" AnchorPane.leftAnchor="487.0">
@@ -352,26 +362,56 @@
     <Button fx:id="annulerCartonRouge2" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.rightAnchor="302.0" />
     <Pane fx:id="cardsPane2" layoutX="1490.0" layoutY="706.0" prefHeight="114.0" prefWidth="374.0">
       <children>
-        <ImageView fx:id="addRedCard2" fitHeight="125.0" fitWidth="123.0" layoutY="14.0" onMouseClicked="#addRedCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/redcardV2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="addYellowCard2" fitHeight="125.0" fitWidth="123.0" layoutX="123.0" layoutY="14.0" onMouseClicked="#addYellowCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/yellowcardV2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="addBlueCard2" fitHeight="125.0" fitWidth="123.0" layoutX="246.0" layoutY="14.0" onMouseClicked="#addBlueCard_Click" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../../Images/bluecard.png" />
-          </image>
-        </ImageView>
+        <Button id="" fx:id="addRedCard2" layoutX="15.0" layoutY="0.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addRedCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="addRedCard2" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/redcardV2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button id="" fx:id="addYellowCard2" layoutX="146.0" layoutY="0.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addYellowCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="addYellowCard2" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/yellowcardV2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button id="" fx:id="addBlueCard2" layoutX="279.0" layoutY="0.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addBlueCard_Click" prefWidth="108.0" text="">
+          <graphic>
+            <ImageView id="addBlueCard2" fitHeight="125.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../Images/bluecard.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
       </children>
     </Pane>
     <Button fx:id="annulerCartonBleu2" layoutX="1760.0" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button fx:id="annulerCartonJaune2" layoutX="1626.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq1" layoutX="63.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq1Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq2" layoutX="1708.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq2Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
+    <Button id="" fx:id="deuxMinEq1" layoutX="266.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
+      <graphic>
+        <ImageView id="deuxMinEq1" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../Images/deuxmin.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
+    <Button id="" fx:id="tirEq1" layoutX="104.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" prefWidth="123.0" text="">
+      <graphic>
+        <ImageView id="tirEq1" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../Images/ball.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
   </children>
 </AnchorPane>

@@ -426,8 +426,8 @@ public class direct1Controller {
 ///////////  Liste des joueurs actions : 2 mins, cartons et tirs /////////////    
     
     Joueur joueurSelectionne;
-    @FXML
-    private ImageView deuxMinEq1, tirEq1, deuxMinEq2, tirEq2, addRedCard1, addYellowCard1, addBlueCard1, addRedCard2, addYellowCard2, addBlueCard2;
+//    @FXML
+//    private ImageView deuxMinEq1Img, tirEq1Img, deuxMinEq2Img, tirEq2Img, addRedCard1Img, addYellowCard1Img, addBlueCard1Img, addRedCard2Img, addYellowCard2Img, addBlueCard2Img;
     @FXML
     private Pane cardsPane1, cardsPane2;
     @FXML
@@ -436,6 +436,8 @@ public class direct1Controller {
     private Text joueurSelectionne_Text;
     @FXML
     private Button annulerCartonRouge1, annulerCartonRouge2, annulerCartonJaune1, annulerCartonJaune2, annulerCartonBleu1, annulerCartonBleu2;
+    @FXML
+    private Button deuxMinEq1, tirEq1, deuxMinEq2, tirEq2, addRedCard1, addYellowCard1, addBlueCard1, addRedCard2, addYellowCard2, addBlueCard2;
     
     
     // Selection du joueur au click
