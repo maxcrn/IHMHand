@@ -375,7 +375,7 @@ public class direct1Controller {
 			}
 		}
         
-        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 && rempTitu.getCarton_rouge() == 0) {
+        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 && rempTitu.getCarton_rouge() == 0 && tituRemp.getCarton_bleu() == 0 && rempTitu.getCarton_bleu() == 0) {
         	tituRemp.setTitulaire(!tituRemp.isTitulaire());
         	rempTitu.setTitulaire(!rempTitu.isTitulaire());
         	String tempTxt = target.getText();
@@ -391,15 +391,15 @@ public class direct1Controller {
     
     Joueur joueurSelectionne;
     @FXML
-    private ImageView cartonEq1, deuxMinEq1, tirEq1, cartonEq2, deuxMinEq2, tirEq2, addRedCard;
+    private ImageView deuxMinEq1, tirEq1, deuxMinEq2, tirEq2, addRedCard1, addYellowCard1, addBlueCard1, addRedCard2, addYellowCard2, addBlueCard2;
     @FXML
-    private Pane cardsPane;
+    private Pane cardsPane1, cardsPane2;
     @FXML
     private Text testCarton;
     @FXML
     private Text joueurSelectionne_Text;
     @FXML
-    private Button annulerCartonRouge1, annulerCartonRouge2;
+    private Button annulerCartonRouge1, annulerCartonRouge2, annulerCartonJaune1, annulerCartonJaune2, annulerCartonBleu1, annulerCartonBleu2;
     
     
     // Selection du joueur au click
@@ -418,25 +418,42 @@ public class direct1Controller {
 				else if(textClick.getText().equals(rempText[i].getText())) {
 					joueurSelectionne_Text = rempText[i];
 				}
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0) {
-					cartonEq1.setDisable(false);
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+					cardsPane1.setDisable(false);
 					deuxMinEq1.setDisable(false);
 					tirEq1.setDisable(false);
 					annulerCartonRouge1.setVisible(false);
 					annulerCartonRouge2.setVisible(false);
 				}
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 1) {
-					annulerCartonRouge1.setVisible(true);
+				if(joueurSelectionne.getEquipe() == equipe1) {
+					if(joueurSelectionne.getCarton_bleu() == 1) {
+						annulerCartonBleu1.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_rouge() == 1) {
+						annulerCartonRouge1.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_jaune() > 0) {
+						annulerCartonJaune1.setVisible(true);
+					}
 				}
-				else if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0) {
-					cartonEq2.setDisable(false);
+				
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+					cardsPane2.setDisable(false);
 					deuxMinEq2.setDisable(false);
 					tirEq2.setDisable(false);
 					annulerCartonRouge1.setVisible(false);
 					annulerCartonRouge2.setVisible(false);
 				}
-				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 1) {
-					annulerCartonRouge2.setVisible(true);
+				if(joueurSelectionne.getEquipe() == equipe2) {
+					if(joueurSelectionne.getCarton_bleu() == 1) {
+						annulerCartonBleu2.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_rouge() == 1) {
+						annulerCartonRouge2.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_jaune() > 0) {
+						annulerCartonJaune2.setVisible(true);
+					}
 				}
 			}
 			else if(textClick.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())) {
@@ -448,25 +465,41 @@ public class direct1Controller {
 					joueurSelectionne_Text = rempText[i];
 				}
 				System.out.println(joueurSelectionne.getNom());
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0) {
-					cartonEq1.setDisable(false);
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+					cardsPane1.setDisable(false);
 					deuxMinEq1.setDisable(false);
 					tirEq1.setDisable(false);
 					annulerCartonRouge1.setVisible(false);
 					annulerCartonRouge2.setVisible(false);
 				}
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 1) {
-					annulerCartonRouge1.setVisible(true);
+				if(joueurSelectionne.getEquipe() == equipe1) {
+					if(joueurSelectionne.getCarton_bleu() == 1) {
+						annulerCartonBleu1.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_rouge() == 1) {
+						annulerCartonRouge1.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_jaune() > 0) {
+						annulerCartonJaune1.setVisible(true);
+					}
 				}
-				else if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0) {
-					cartonEq2.setDisable(false);
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+					cardsPane2.setDisable(false);
 					deuxMinEq2.setDisable(false);
 					tirEq2.setDisable(false);
 					annulerCartonRouge1.setVisible(false);
 					annulerCartonRouge2.setVisible(false);
 				}
-				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 1) {
-					annulerCartonRouge2.setVisible(true);
+				if(joueurSelectionne.getEquipe() == equipe2) {
+					if(joueurSelectionne.getCarton_bleu() == 1) {
+						annulerCartonBleu2.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_rouge() == 1) {
+						annulerCartonRouge2.setVisible(true);
+					}
+					if(joueurSelectionne.getCarton_jaune() > 0) {
+						annulerCartonJaune2.setVisible(true);
+					}
 				}
 			}
 			
@@ -474,15 +507,12 @@ public class direct1Controller {
     }
     
     
-///////////  Cartons : rouge, jaune et bleu /////////////     
-    public void cartonEq1_Click(MouseEvent event) {
-    	if(joueurSelectionne.getEquipe().getNomEquipe().equals(equipe1.getNomEquipe())) {
-    		System.out.println(joueurSelectionne.getNom());
-    		cardsPane.setVisible(true);
-    		addRedCard.setDisable(false);
-    		
-    	}
-    }
+///////////  Cartons : rouge, jaune et bleu  /////////////     
+   /* public void cartonClick(MouseEvent event) {
+		System.out.println(joueurSelectionne.getNom());
+		cardsPane.setVisible(true);
+		addRedCard.setDisable(false);
+    }*/
     
     public void addRedCard_Click(MouseEvent event) {
     	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
@@ -491,28 +521,27 @@ public class direct1Controller {
     		if(joueurSelectionne_Text == tituText[i]) {
     			joueurSelectionne_Text.setFill(Color.RED);
     			joueurSelectionne.setCarton_rouge(joueurSelectionne.getCarton_rouge() + 1);
-    			cartonEq1.setDisable(true);
+    			cardsPane1.setDisable(true);
 				deuxMinEq1.setDisable(true);
 				tirEq1.setDisable(true);
-				cartonEq2.setDisable(true);
+				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				
     		}
     	}
 		for(i = 0; i < 14; i++) {
     		if(joueurSelectionne_Text == rempText[i]) {
     			joueurSelectionne_Text.setFill(Color.RED);
     			joueurSelectionne.setCarton_rouge(joueurSelectionne.getCarton_rouge() + 1);
-    			cartonEq1.setDisable(true);
+    			cardsPane1.setDisable(true);
 				deuxMinEq1.setDisable(true);
 				tirEq1.setDisable(true);
-    			cartonEq2.setDisable(true);
+				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
     		}
 		}
-    	//joueurSelectionne_Text.setStyle("-fx-highlight-fill: red;");
-    	// Incrémenter le setCarton_rouge
     }
     
     public void cartonRougeAnnule(MouseEvent event) {
@@ -522,19 +551,97 @@ public class direct1Controller {
 		annulerCartonRouge2.setVisible(false);
     }
     
-    /*public void addYellowCard_Click(MouseEvent event) {
+    public void addYellowCard_Click(MouseEvent event) {
     	System.out.println("yellowcard");
-    	// Incrémenter le setCarton_jaune
+    	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
+    	Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
+    	for(i = 0; i < 14; i++) {
+    		if(joueurSelectionne_Text == tituText[i]) {
+    			if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3 || joueurSelectionne.getCarton_jaune() == 5 ) {
+    				joueurSelectionne_Text.setFill(Color.BLACK);
+        			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
+        			
+    			}
+    			else {
+	    			joueurSelectionne_Text.setFill(Color.GOLD);
+	    			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
+    			}
+    			cardsPane1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+				cardsPane2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
+    		}
+    	}
+    	for(i = 0; i < 14; i++) {
+    		if(joueurSelectionne_Text == rempText[i]) {
+    			if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3 || joueurSelectionne.getCarton_jaune() == 5 ) {
+    				joueurSelectionne_Text.setFill(Color.BLACK);
+        			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
+        			
+    			}
+    			else {
+	    			joueurSelectionne_Text.setFill(Color.GOLD);
+	    			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
+    			}
+    			cardsPane1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+				cardsPane2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
+    		}
+    	}
+    }
+    
+    public void cartonJauneAnnule(MouseEvent event) {
+    	joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() - 1);
+		joueurSelectionne_Text.setFill(Color.BLACK);
+		annulerCartonJaune1.setVisible(false);
+		annulerCartonJaune2.setVisible(false);
     }
     
     public void addBlueCard_Click(MouseEvent event) {
-    	System.out.println("bluecard");
-    	// Incrémenter le setCarton_bleu
-    }*/
+		Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
+		Text[] rempText = {r11, r12, r13, r14, r15, r16, r17, r21, r22, r23, r24, r25, r26, r27};
+		for(i = 0; i < 14; i++) {
+			if(joueurSelectionne_Text == tituText[i]) {
+				joueurSelectionne_Text.setFill(Color.BLUE);
+				joueurSelectionne.setCarton_bleu(joueurSelectionne.getCarton_bleu() + 1);
+				cardsPane1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+				cardsPane2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
+				
+			}
+		}
+		for(i = 0; i < 14; i++) {
+			if(joueurSelectionne_Text == rempText[i]) {
+				joueurSelectionne_Text.setFill(Color.BLUE);
+				joueurSelectionne.setCarton_bleu(joueurSelectionne.getCarton_bleu() + 1);
+				cardsPane1.setDisable(true);
+				deuxMinEq1.setDisable(true);
+				tirEq1.setDisable(true);
+				cardsPane2.setDisable(true);
+				deuxMinEq2.setDisable(true);
+				tirEq2.setDisable(true);
+			}
+		}
+	}
+    
+    public void cartonBleuAnnule(MouseEvent event) {
+    	joueurSelectionne.setCarton_bleu(joueurSelectionne.getCarton_bleu() - 1);
+		joueurSelectionne_Text.setFill(Color.BLACK);
+		annulerCartonBleu1.setVisible(false);
+		annulerCartonBleu2.setVisible(false);
+    }
 
     
     
-    ///// 2 MINUTES /////
+///////////  2 minutes  /////////////   
     
     
     @FXML
@@ -554,7 +661,7 @@ public class direct1Controller {
     	joueurDeuxMinEq1Text = joueurSelectionne_Text;
     	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min()+1);
     	start2Min();
-    	cartonEq1.setDisable(true);
+    	cardsPane1.setDisable(true);
 		deuxMinEq1.setDisable(true);
 		tirEq1.setDisable(true);
 		joueurDeuxMinEq1Text.setDisable(true);
@@ -565,7 +672,7 @@ public class direct1Controller {
     	joueurDeuxMinEq2Text = joueurSelectionne_Text;
     	joueurDeuxMinEq2.setDeux_min(joueurDeuxMinEq2.getDeux_min()+1);
     	start2Min();
-    	cartonEq2.setDisable(true);
+    	cardsPane2.setDisable(true);
 		deuxMinEq2.setDisable(true);
 		tirEq2.setDisable(true);
 		joueurDeuxMinEq2Text.setDisable(true);
