@@ -409,7 +409,9 @@ public class direct1Controller {
 			}
 		}
         
-        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 && rempTitu.getCarton_rouge() == 0 && tituRemp.getCarton_bleu() == 0 && rempTitu.getCarton_bleu() == 0) {
+        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 
+        		&& rempTitu.getCarton_rouge() == 0 && tituRemp.getCarton_bleu() == 0 && rempTitu.getCarton_bleu() == 0 
+        		&& rempTitu != joueurDeuxMinEq2 && rempTitu != joueurDeuxMinEq1 && tituRemp != joueurDeuxMinEq2 && tituRemp != joueurDeuxMinEq1) {
         	tituRemp.setTitulaire(!tituRemp.isTitulaire());
         	rempTitu.setTitulaire(!rempTitu.isTitulaire());
         	String tempTxt = target.getText();
@@ -452,7 +454,7 @@ public class direct1Controller {
 				else if(textClick.getText().equals(rempText[i].getText())) {
 					joueurSelectionne_Text = rempText[i];
 				}
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0 && joueurSelectionne != joueurDeuxMinEq1) {
 					cardsPane1.setDisable(false);
 					deuxMinEq1.setDisable(false);
 					tirEq1.setDisable(false);
@@ -468,10 +470,11 @@ public class direct1Controller {
 					}
 					if(joueurSelectionne.getCarton_jaune() > 0) {
 						annulerCartonJaune1.setVisible(true);
+						System.out.println("annuleJaune");
 					}
 				}
 				
-				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0 && joueurSelectionne != joueurDeuxMinEq2) {
 					cardsPane2.setDisable(false);
 					deuxMinEq2.setDisable(false);
 					tirEq2.setDisable(false);
@@ -487,6 +490,7 @@ public class direct1Controller {
 					}
 					if(joueurSelectionne.getCarton_jaune() > 0) {
 						annulerCartonJaune2.setVisible(true);
+						System.out.println("annuleJaune");
 					}
 				}
 			}
@@ -499,7 +503,7 @@ public class direct1Controller {
 					joueurSelectionne_Text = rempText[i];
 				}
 				System.out.println(joueurSelectionne.getNom());
-				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0 && joueurSelectionne != joueurDeuxMinEq1) {
 					cardsPane1.setDisable(false);
 					deuxMinEq1.setDisable(false);
 					tirEq1.setDisable(false);
@@ -515,9 +519,10 @@ public class direct1Controller {
 					}
 					if(joueurSelectionne.getCarton_jaune() > 0) {
 						annulerCartonJaune1.setVisible(true);
+						System.out.println("annuleJaune");
 					}
 				}
-				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0) {
+				if(joueurSelectionne.getEquipe() == equipe2 && joueurSelectionne.getCarton_rouge() == 0 && joueurSelectionne.getCarton_bleu() == 0 && joueurSelectionne != joueurDeuxMinEq2) {
 					cardsPane2.setDisable(false);
 					deuxMinEq2.setDisable(false);
 					tirEq2.setDisable(false);
@@ -533,6 +538,7 @@ public class direct1Controller {
 					}
 					if(joueurSelectionne.getCarton_jaune() > 0) {
 						annulerCartonJaune2.setVisible(true);
+						System.out.println("annuleJaune");
 					}
 				}
 			}
@@ -594,7 +600,7 @@ public class direct1Controller {
     			if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3 || joueurSelectionne.getCarton_jaune() == 5 ) {
     				joueurSelectionne_Text.setFill(Color.BLACK);
         			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
-        			
+        			start2Min();
     			}
     			else {
 	    			joueurSelectionne_Text.setFill(Color.GOLD);
@@ -606,6 +612,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerCartonJaune1.setVisible(false);
+				annulerCartonJaune2.setVisible(false);
     		}
     	}
     	for(i = 0; i < 14; i++) {
@@ -613,7 +621,7 @@ public class direct1Controller {
     			if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3 || joueurSelectionne.getCarton_jaune() == 5 ) {
     				joueurSelectionne_Text.setFill(Color.BLACK);
         			joueurSelectionne.setCarton_jaune(joueurSelectionne.getCarton_jaune() + 1);
-        			
+        			start2Min();
     			}
     			else {
 	    			joueurSelectionne_Text.setFill(Color.GOLD);
@@ -625,6 +633,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerCartonJaune1.setVisible(false);
+				annulerCartonJaune2.setVisible(false);
     		}
     	}
     }
@@ -634,6 +644,16 @@ public class direct1Controller {
 		joueurSelectionne_Text.setFill(Color.BLACK);
 		annulerCartonJaune1.setVisible(false);
 		annulerCartonJaune2.setVisible(false);
+		if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3) {
+			if(joueurSelectionne.getEquipe() == equipe1) {
+				annuler2MinutesEq1Click();
+				joueurSelectionne_Text.setFill(Color.GOLD);
+			}
+			if(joueurSelectionne.getEquipe() == equipe2) {
+				annuler2MinutesEq2Click();
+				joueurSelectionne_Text.setFill(Color.GOLD);
+			}
+		}
 	}
     
     public void addBlueCard_Click(MouseEvent event) {
@@ -693,41 +713,41 @@ public class direct1Controller {
     Text joueurDeuxMinEq1Text, joueurDeuxMinEq2Text;
     
     public void deuxMinEq1Click(MouseEvent event) {
-    	joueurDeuxMinEq1 = joueurSelectionne;
-    	joueurDeuxMinEq1Text = joueurSelectionne_Text;
-    	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min()+1);
     	start2Min();
     	cardsPane1.setDisable(true);
 		deuxMinEq1.setDisable(true);
 		tirEq1.setDisable(true);
-		joueurDeuxMinEq1Text.setDisable(true);
     }
     
     public void deuxMinEq2Click(MouseEvent event) {
-    	joueurDeuxMinEq2 = joueurSelectionne;
-    	joueurDeuxMinEq2Text = joueurSelectionne_Text;
-    	joueurDeuxMinEq2.setDeux_min(joueurDeuxMinEq2.getDeux_min()+1);
     	start2Min();
     	cardsPane2.setDisable(true);
 		deuxMinEq2.setDisable(true);
 		tirEq2.setDisable(true);
-		joueurDeuxMinEq2Text.setDisable(true);
     }
     
     private void start2Min() {
     	if(joueurSelectionne.getEquipe() == equipe1) {
+    		joueurDeuxMinEq1 = joueurSelectionne;
+        	joueurDeuxMinEq1Text = joueurSelectionne_Text;
+        	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min()+1);
     		deuxMinEnCoursEq1 = true;
     		deuxMinEq1Pane.setVisible(true);
         	exec2MinEq1 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq1.scheduleAtFixedRate(stopWatchDeuxMinEq1,1000,1000,TimeUnit.MILLISECONDS);
         	annuler2MinutesEq1.setVisible(true);
+//        	joueurDeuxMinEq1Text.setDisable(true);
     	}
     	else if(joueurSelectionne.getEquipe() == equipe2){
+    		joueurDeuxMinEq2 = joueurSelectionne;
+        	joueurDeuxMinEq2Text = joueurSelectionne_Text;
+        	joueurDeuxMinEq2.setDeux_min(joueurDeuxMinEq2.getDeux_min()+1);
     		deuxMinEnCoursEq2 = true;
     		deuxMinEq2Pane.setVisible(true);
         	exec2MinEq2 = Executors.newSingleThreadScheduledExecutor();
         	exec2MinEq2.scheduleAtFixedRate(stopWatchDeuxMinEq2,1000,1000,TimeUnit.MILLISECONDS);
         	annuler2MinutesEq2.setVisible(true);
+//        	joueurDeuxMinEq2Text.setDisable(true);
     	}
     }
     
@@ -741,6 +761,8 @@ public class direct1Controller {
 		exec2MinEq1.shutdown();
 		joueurDeuxMinEq1Text.setDisable(false);
 		annuler2MinutesEq1.setVisible(false);
+		joueurDeuxMinEq1Text = null;
+		joueurDeuxMinEq1 = null;
     }
     
     private void Fin2MinEq2() {
@@ -753,6 +775,8 @@ public class direct1Controller {
 		exec2MinEq2.shutdown();
 		joueurDeuxMinEq2Text.setDisable(false);
 		annuler2MinutesEq2.setVisible(false);
+		joueurDeuxMinEq2Text = null;
+		joueurDeuxMinEq2 = null;
     }
     
     public void annuler2MinutesEq1Click() {
