@@ -32,6 +32,11 @@ public class Joueur extends Personne {
 		this.equipe.setNbPoints(this.equipe.getNbPoints() + 1);
 	}
 	
+	public void annulerBut() {
+		this.buts --;
+		this.equipe.setNbPoints(this.equipe.getNbPoints() - 1);
+	}
+	
 	public int getTirs() {
 		return tirs;
 	}

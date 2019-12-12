@@ -298,7 +298,7 @@
         </AnchorPane>
       </items>
     </SplitPane>
-    <Button id="" fx:id="tirEq2" disable="true" layoutX="1708.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="122.54998779296875" text="">
+    <Button id="" fx:id="tirEq2" disable="true" layoutX="1630.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="122.54998779296875" text="">
       <graphic>
         <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -307,7 +307,7 @@
         </ImageView>
       </graphic>
     </Button>
-    <Button id="" fx:id="deuxMinEq2" disable="true" layoutX="1559.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq2Click" prefWidth="108.0" text="">
+    <Button id="" fx:id="deuxMinEq2" disable="true" layoutX="1505.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq2Click" prefWidth="108.0" text="">
       <graphic>
         <ImageView id="deuxMinEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -400,7 +400,7 @@
     <Button fx:id="annulerCartonJaune2" layoutX="1626.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq1" layoutX="63.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq1Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq2" layoutX="1708.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq2Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
-    <Button id="" fx:id="deuxMinEq1" disable="true" layoutX="266.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
+    <Button id="" fx:id="deuxMinEq1" disable="true" layoutX="321.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
       <graphic>
         <ImageView id="deuxMinEq1" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -409,7 +409,7 @@
         </ImageView>
       </graphic>
     </Button>
-    <Button id="" fx:id="tirEq1" disable="true" layoutX="104.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="123.0" text="">
+    <Button id="" fx:id="tirEq1" disable="true" layoutX="182.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="123.0" text="">
       <graphic>
         <ImageView id="tirEq1" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -441,5 +441,23 @@
             <Button layoutX="185.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Centre" />
          </children>
       </Pane>
+      <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="123.0" text="">
+         <graphic>
+            <ImageView id="tirEq1" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/goalCancelled.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="" fx:id="annulerButEq2" disable="true" layoutX="1772.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="122.54998779296875" text="">
+         <graphic>
+            <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" onMouseClicked="#annulerButClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/goalCancelled.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
   </children>
 </AnchorPane>

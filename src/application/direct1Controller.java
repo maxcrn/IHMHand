@@ -553,6 +553,14 @@ public class direct1Controller {
     		tirEq1.setDisable(true);
     		tirEq2.setDisable(true);
     	}
+    	if(joueurSelectionne.getButs() < 1) {
+    		annulerButEq1.setDisable(true);
+    		annulerButEq2.setDisable(true);
+    	}
+    	else {
+    		annulerButEq1.setDisable(false);
+    		annulerButEq2.setDisable(false);
+    	}
     }
     
     
@@ -576,6 +584,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
 				
     		}
     	}
@@ -589,6 +599,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
     		}
 		}
     }
@@ -621,6 +633,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
 				annulerCartonJaune1.setVisible(false);
 				annulerCartonJaune2.setVisible(false);
     		}
@@ -642,6 +656,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
 				annulerCartonJaune1.setVisible(false);
 				annulerCartonJaune2.setVisible(false);
     		}
@@ -678,6 +694,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
 				
 			}
 		}
@@ -691,6 +709,8 @@ public class direct1Controller {
 				cardsPane2.setDisable(true);
 				deuxMinEq2.setDisable(true);
 				tirEq2.setDisable(true);
+				annulerButEq1.setDisable(true);
+				annulerButEq2.setDisable(true);
 			}
 		}
 	}
@@ -726,6 +746,8 @@ public class direct1Controller {
     	cardsPane1.setDisable(true);
 		deuxMinEq1.setDisable(true);
 		tirEq1.setDisable(true);
+		annulerButEq1.setDisable(true);
+		annulerButEq2.setDisable(true);
     }
     
     public void deuxMinEq2Click(MouseEvent event) {
@@ -733,6 +755,8 @@ public class direct1Controller {
     	cardsPane2.setDisable(true);
 		deuxMinEq2.setDisable(true);
 		tirEq2.setDisable(true);
+		annulerButEq1.setDisable(true);
+		annulerButEq2.setDisable(true);
     }
     
     private void start2Min() {
@@ -851,6 +875,8 @@ public class direct1Controller {
     private Pane goalPane;
     @FXML
     private Text scoreEq1, scoreEq2;
+    @FXML
+    private Button annulerButEq1, annulerButEq2;
     
     
     public void tirClick (MouseEvent event) {
@@ -862,6 +888,8 @@ public class direct1Controller {
 		cardsPane2.setDisable(true);
 		deuxMinEq2.setDisable(true);
 		tirEq2.setDisable(true);
+		annulerButEq1.setDisable(true);
+		annulerButEq2.setDisable(true);
 		
     }
     
@@ -882,5 +910,22 @@ public class direct1Controller {
     		scoreEq2.setText(Integer.toString(equipe2.getNbPoints()));
     	}
     }
-    	
+    
+    public void annulerButClick(MouseEvent event) {
+    	joueurSelectionne.annulerBut();
+    	cardsPane1.setDisable(true);
+		deuxMinEq1.setDisable(true);
+		tirEq1.setDisable(true);
+		cardsPane2.setDisable(true);
+		deuxMinEq2.setDisable(true);
+		tirEq2.setDisable(true);
+		annulerButEq1.setDisable(true);
+		annulerButEq2.setDisable(true);
+    	if(joueurSelectionne.getEquipe() == equipe1) {
+    		scoreEq1.setText(Integer.toString(equipe1.getNbPoints()));
+    	}
+    	else if(joueurSelectionne.getEquipe() == equipe2) {
+    		scoreEq2.setText(Integer.toString(equipe2.getNbPoints()));
+    	}
+    } 	
 }
