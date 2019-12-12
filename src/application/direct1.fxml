@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
+<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
   <children>
     <Pane layoutY="17.0" prefHeight="155.0" prefWidth="312.0" AnchorPane.leftAnchor="805.0">
       <children>
@@ -423,7 +423,25 @@
             <Image url="@../../Images/field.png" />
          </image>
       </ImageView>
-      <Pane fx:id="goalPane" layoutX="713.0" layoutY="536.0" prefHeight="310.0" prefWidth="493.0" visible="false">
+      <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="123.0" text="">
+         <graphic>
+            <ImageView id="tirEq1" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/goalCancelled.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="" fx:id="annulerButEq2" disable="true" layoutX="1772.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="122.54998779296875" text="">
+         <graphic>
+            <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" onMouseClicked="#annulerButClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/goalCancelled.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane fx:id="goalPane" layoutX="713.0" layoutY="536.0" prefHeight="452.0" prefWidth="493.0" visible="false">
          <children>
             <ImageView fitHeight="310.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -439,25 +457,39 @@
             <Button layoutX="344.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Droite" />
             <Button layoutX="185.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Milieu Centre" />
             <Button layoutX="185.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Centre" />
+            <Button fx:id="tirRate" layoutX="56.0" layoutY="364.0" mnemonicParsing="false" onMouseClicked="#tirRateClick" text="Tir rate" />
+            <Button layoutX="160.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#tirArretClick" prefHeight="86.0" prefWidth="138.0">
+               <graphic>
+                  <ImageView fitHeight="107.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/arret.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="358.0" layoutY="315.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#tirRateClick" prefHeight="124.0" prefWidth="97.0">
+               <graphic>
+                  <ImageView fitHeight="114.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/poteau.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
-      <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="123.0" text="">
-         <graphic>
-            <ImageView id="tirEq1" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/goalCancelled.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button id="" fx:id="annulerButEq2" disable="true" layoutX="1772.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="122.54998779296875" text="">
-         <graphic>
-            <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" onMouseClicked="#annulerButClick" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Images/goalCancelled.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="annulerTir1" layoutX="199.0" layoutY="975.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
+      <Button fx:id="annulerTirEnCours" layoutX="886.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir en cours" textFill="WHITE" visible="false" />
+      <Button fx:id="annulerTir2" layoutX="1648.0" layoutY="975.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
+      <Text fx:id="nb2Min1" layoutX="32.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="nb2Min2" layoutX="1472.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
   </children>
 </AnchorPane>

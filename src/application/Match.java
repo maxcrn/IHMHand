@@ -6,8 +6,8 @@ public class Match {
 	
 	private Equipe domicile;
 	private Equipe visiteur;
-	private String score_eq1;
-	private String score_eq2;
+	private int score_eq1;
+	private int score_eq2;
 	private Personne arbitre1;
 	private Personne arbitre2;
 	private Personne secretaire;
@@ -16,8 +16,8 @@ public class Match {
 	private Date dateRencontre;
 	
 	public Match(Equipe domicile, Equipe visiteur, Personne arbitre1, Personne arbitre2, Personne secretaire, Personne chronometreur, Personne delegue, Date dateRencontre) {
-		this.score_eq1 = "0";
-		this.score_eq1 = "0";
+		this.score_eq1 = 0;
+		this.score_eq1 = 0;
 		this.setDomicile(domicile);
 		this.setVisiteur(visiteur);
 		this.setArbitre1(arbitre1);
@@ -44,19 +44,19 @@ public class Match {
 		this.visiteur = visiteur;
 	}
 
-	public String getScore_eq1() {
+	public int getScore_eq1() {
 		return score_eq1;
 	}
 
-	public void setScore_eq1(String score_eq1) {
+	public void setScore_eq1(int score_eq1) {
 		this.score_eq1 = score_eq1;
 	}
 
-	public String getScore_eq2() {
+	public int getScore_eq2() {
 		return score_eq2;
 	}
 
-	public void setScore_eq2(String score_eq2) {
+	public void setScore_eq2(int score_eq2) {
 		this.score_eq2 = score_eq2;
 	}
 
