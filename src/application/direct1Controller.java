@@ -3,12 +3,15 @@ package application;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+
 import javafx.fxml.FXML;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.effect.Light.Point;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
@@ -836,4 +839,24 @@ public class direct1Controller {
         }
     };
     
+///////////  Tirs  /////////////     
+    
+    @FXML
+    private ImageView field;
+    
+    public void tirClick (MouseEvent event) {
+    	field.setVisible(true);
+    	cardsPane1.setDisable(true);
+		deuxMinEq1.setDisable(true);
+		tirEq1.setDisable(true);
+		cardsPane2.setDisable(true);
+		deuxMinEq2.setDisable(true);
+		tirEq2.setDisable(true);
+    }
+    
+    public void fieldClick (MouseEvent event) {
+    	field.setDisable(true);
+    	
+    }
+    	
 }

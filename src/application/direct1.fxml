@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.direct1Controller">
+<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
   <children>
     <Pane layoutY="17.0" prefHeight="155.0" prefWidth="312.0" AnchorPane.leftAnchor="805.0">
       <children>
@@ -293,7 +286,7 @@
         </AnchorPane>
       </items>
     </SplitPane>
-    <Button id="" fx:id="tirEq2" layoutX="1708.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" prefWidth="122.54998779296875" text="">
+    <Button id="" fx:id="tirEq2" disable="true" layoutX="1708.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="122.54998779296875" text="">
       <graphic>
         <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -302,7 +295,7 @@
         </ImageView>
       </graphic>
     </Button>
-    <Button id="" fx:id="deuxMinEq2" layoutX="1559.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq2Click" prefWidth="108.0" text="">
+    <Button id="" fx:id="deuxMinEq2" disable="true" layoutX="1559.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq2Click" prefWidth="108.0" text="">
       <graphic>
         <ImageView id="deuxMinEq2" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -311,7 +304,7 @@
         </ImageView>
       </graphic>
     </Button>
-    <Pane fx:id="cardsPane1" layoutY="703.0" prefHeight="137.0" prefWidth="399.0" AnchorPane.leftAnchor="43.0">
+    <Pane fx:id="cardsPane1" disable="true" layoutY="703.0" prefHeight="137.0" prefWidth="399.0" AnchorPane.leftAnchor="43.0">
       <children>
         <Button id="" fx:id="addRedCard1" contentDisplay="CENTER" layoutX="14.0" layoutY="4.0" minWidth="95.015625" mnemonicParsing="false" onMouseClicked="#addRedCard_Click" prefWidth="108.0" text="">
           <graphic>
@@ -360,7 +353,7 @@
     <Button fx:id="annulerCartonJaune1" layoutX="199.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button fx:id="annulerCartonBleu1" layoutX="321.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button fx:id="annulerCartonRouge2" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.rightAnchor="302.0" />
-    <Pane fx:id="cardsPane2" layoutX="1490.0" layoutY="706.0" prefHeight="114.0" prefWidth="374.0">
+    <Pane fx:id="cardsPane2" disable="true" layoutX="1490.0" layoutY="706.0" prefHeight="114.0" prefWidth="374.0">
       <children>
         <Button id="" fx:id="addRedCard2" layoutX="15.0" layoutY="0.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addRedCard_Click" prefWidth="108.0" text="">
           <graphic>
@@ -395,23 +388,46 @@
     <Button fx:id="annulerCartonJaune2" layoutX="1626.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq1" layoutX="63.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq1Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
     <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq2" layoutX="1708.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq2Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
-    <Button id="" fx:id="deuxMinEq1" layoutX="266.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
+    <Button id="" fx:id="deuxMinEq1" disable="true" layoutX="266.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
       <graphic>
-        <ImageView id="deuxMinEq1" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView id="deuxMinEq1" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../../Images/deuxmin.png" />
           </image>
         </ImageView>
       </graphic>
     </Button>
-    <Button id="" fx:id="tirEq1" layoutX="104.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" prefWidth="123.0" text="">
+    <Button id="" fx:id="tirEq1" disable="true" layoutX="104.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#tirClick" prefWidth="123.0" text="">
       <graphic>
-        <ImageView id="tirEq1" disable="true" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView id="tirEq1" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../../Images/ball.png" />
           </image>
         </ImageView>
       </graphic>
     </Button>
+      <ImageView fx:id="field" fitHeight="198.0" fitWidth="297.0" layoutX="811.0" layoutY="294.0" onMouseClicked="#fieldClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/field.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="715.0" layoutY="596.0" prefHeight="310.0" prefWidth="493.0">
+         <children>
+            <ImageView fitHeight="310.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/goal.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="27.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Gauche" />
+            <Button layoutX="344.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Droite" />
+            <Button layoutX="185.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Centre" />
+            <Button layoutX="27.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Gauche" />
+            <Button layoutX="27.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Gauche" />
+            <Button layoutX="344.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Droite" />
+            <Button layoutX="344.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Droite" />
+            <Button layoutX="185.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Centre" />
+            <Button layoutX="185.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Centre" />
+         </children>
+      </Pane>
   </children>
 </AnchorPane>
