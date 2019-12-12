@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
+<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
   <children>
     <Pane layoutY="17.0" prefHeight="155.0" prefWidth="312.0" AnchorPane.leftAnchor="805.0">
       <children>
@@ -26,12 +26,6 @@
             <Image url="@../../Images/Lidl_montpellier_logo.png" />
           </image>
         </ImageView>
-        <Text layoutX="86.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
-          <font>
-            <Font size="40.0" fx:id="x1" />
-          </font>
-        </Text>
-        <Text font="$x1" layoutX="175.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" />
         <Text layoutX="147.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
           <font>
             <Font size="48.0" />
@@ -57,11 +51,29 @@
             <Image url="@../../Images/TM3.png" />
           </image>
         </ImageView>
+            <VBox alignment="CENTER" layoutX="175.0" layoutY="54.0" prefHeight="47.0" prefWidth="51.0">
+               <children>
+              <Text fx:id="scoreEq2" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="40.0" fx:id="x6" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
         <ImageView fx:id="tm2Equipe1" fitHeight="33.0" fitWidth="25.0" layoutX="30.0" layoutY="119.0" onMouseClicked="#pressStart" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../../Images/TM2.png" />
           </image>
         </ImageView>
+            <VBox alignment="CENTER" layoutX="86.0" layoutY="54.0" prefHeight="39.0" prefWidth="51.0">
+               <children>
+              <Text fx:id="scoreEq1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                <font>
+                  <Font size="40.0" fx:id="x1" />
+                </font>
+              </Text>
+               </children>
+            </VBox>
         <ImageView fx:id="tm3Equipe1" fitHeight="33.0" fitWidth="25.0" layoutX="56.0" layoutY="119.0" onMouseClicked="#pressStart" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../../Images/TM3.png" />
@@ -406,27 +418,27 @@
         </ImageView>
       </graphic>
     </Button>
-      <ImageView fx:id="field" fitHeight="198.0" fitWidth="297.0" layoutX="811.0" layoutY="294.0" onMouseClicked="#fieldClick" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="field" fitHeight="198.0" fitWidth="297.0" layoutX="811.0" layoutY="294.0" onMouseClicked="#fieldClick" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../../Images/field.png" />
          </image>
       </ImageView>
-      <Pane layoutX="715.0" layoutY="596.0" prefHeight="310.0" prefWidth="493.0">
+      <Pane fx:id="goalPane" layoutX="713.0" layoutY="536.0" prefHeight="310.0" prefWidth="493.0" visible="false">
          <children>
             <ImageView fitHeight="310.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Images/goal.png" />
+                  <Image url="@../../Images/goal2.png" />
                </image>
             </ImageView>
-            <Button layoutX="27.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Gauche" />
-            <Button layoutX="344.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Droite" />
-            <Button layoutX="185.0" layoutY="30.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Lucarne Centre" />
-            <Button layoutX="27.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Gauche" />
-            <Button layoutX="27.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Gauche" />
-            <Button layoutX="344.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Droite" />
-            <Button layoutX="344.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Droite" />
-            <Button layoutX="185.0" layoutY="134.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Milieu Centre" />
-            <Button layoutX="185.0" layoutY="226.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Bas Centre" />
+            <Button layoutX="27.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Lucarne Gauche" />
+            <Button layoutX="344.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Lucarne Droite" />
+            <Button layoutX="185.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Lucarne Centre" />
+            <Button layoutX="27.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Milieu Gauche" />
+            <Button layoutX="27.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Gauche" />
+            <Button layoutX="344.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Milieu Droite" />
+            <Button layoutX="344.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Droite" />
+            <Button layoutX="185.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Milieu Centre" />
+            <Button layoutX="185.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#goalButton" prefHeight="70.0" prefWidth="124.0" text="Bas Centre" />
          </children>
       </Pane>
   </children>

@@ -10,6 +10,8 @@ public class Joueur extends Personne {
 	private int deux_min;
 	private Equipe equipe;
 	private String numero;
+	private int tirs;
+	private int buts;
 	
 	//Constructeur
 	public Joueur (String nom, String prenom, Equipe equipe, String numero, boolean titulaire) {
@@ -21,8 +23,31 @@ public class Joueur extends Personne {
 		this.carton_rouge = 0;
 		this.carton_jaune = 0;
 		this.deux_min = 0;
+		this.tirs = 0;
+		this.buts = 0;
 	}
 	
+	public void marquerBut() {
+		this.buts ++;
+		this.equipe.setNbPoints(this.equipe.getNbPoints() + 1);
+	}
+	
+	public int getTirs() {
+		return tirs;
+	}
+
+	public void setTirs(int tirs) {
+		this.tirs = tirs;
+	}
+
+	public int getButs() {
+		return buts;
+	}
+
+	public void setButs(int buts) {
+		this.buts = buts;
+	}
+
 	public boolean isTitulaire() {
 		return titulaire;
 	}

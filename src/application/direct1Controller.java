@@ -328,18 +328,18 @@ public class direct1Controller {
 	// Liste joueurs equipe 1
 	Joueur titu11 = new Gardien("SEGO", "Marin", equipe1, "1", true);
 	Joueur remp11 = new Gardien("BONNEFOI", "Kevin", equipe1, "12", false);
-	Joueur titu12 = new JoueurChamp("AFGOUR", "Benjamin", equipe1, "33", true);
-	Joueur titu13 = new JoueurChamp("BOS", "Julien", equipe1, "13", true);
-	Joueur titu14 = new JoueurChamp("DUARTE", "Gilberto", equipe1, "90", true);
-	Joueur titu15 = new JoueurChamp("GUIRAUDOU", "Paul Louis", equipe1, "2", true);
-	Joueur titu16 = new JoueurChamp("LENNE", "Yanis", equipe1, "32", true);
-	Joueur titu17 = new JoueurChamp("MENGON", "Marco", equipe1, "15", true);
-	Joueur remp12 = new JoueurChamp("PETTERSSON", "Frederic", equipe1, "18", false);
-	Joueur remp13 = new JoueurChamp("PORTE", "Valentin", equipe1, "28", false);
-	Joueur remp14 = new JoueurChamp("RICHARDSON", "Melvyn", equipe1, "22", false);
-	Joueur remp15 = new JoueurChamp("SIMONET", "Diego", equipe1, "4", false);
-	Joueur remp16 = new JoueurChamp("SOUSSI", "Mohammed", equipe1, "39", false);
-	Joueur remp17 = new JoueurChamp("GREBILLE", "Mathieu", equipe1, "10", false);
+	Joueur titu12 = new Joueur("AFGOUR", "Benjamin", equipe1, "33", true);
+	Joueur titu13 = new Joueur("BOS", "Julien", equipe1, "13", true);
+	Joueur titu14 = new Joueur("DUARTE", "Gilberto", equipe1, "90", true);
+	Joueur titu15 = new Joueur("GUIRAUDOU", "Paul Louis", equipe1, "2", true);
+	Joueur titu16 = new Joueur("LENNE", "Yanis", equipe1, "32", true);
+	Joueur titu17 = new Joueur("MENGON", "Marco", equipe1, "15", true);
+	Joueur remp12 = new Joueur("PETTERSSON", "Frederic", equipe1, "18", false);
+	Joueur remp13 = new Joueur("PORTE", "Valentin", equipe1, "28", false);
+	Joueur remp14 = new Joueur("RICHARDSON", "Melvyn", equipe1, "22", false);
+	Joueur remp15 = new Joueur("SIMONET", "Diego", equipe1, "4", false);
+	Joueur remp16 = new Joueur("SOUSSI", "Mohammed", equipe1, "39", false);
+	Joueur remp17 = new Joueur("GREBILLE", "Mathieu", equipe1, "10", false);
 	
 	
 	Personne entraineur2 = new Personne("GARDENT", "Philippe");
@@ -347,18 +347,18 @@ public class direct1Controller {
 	// Liste joueurs equipe 2
 	Joueur titu21 = new Gardien("LETTENS", "Jef", equipe2, "1", true);
 	Joueur remp21 = new Gardien("GEHIN", "Theo", equipe2, "12", false);
-	Joueur titu22 = new JoueurChamp("LEVENTOUX", "Remi", equipe2, "2", true);
-	Joueur titu23 = new JoueurChamp("CHELLE", "Pierrick", equipe2, "3", true);
-	Joueur titu24 = new JoueurChamp("OLSSON", "Markus", equipe2, "4", true);
-	Joueur titu25 = new JoueurChamp("GARCIA", "Arnau", equipe2, "9", true);
-	Joueur titu26 = new JoueurChamp("GILBERT", "Maxime", equipe2, "10", true);
-	Joueur titu27 = new JoueurChamp("SOLE", "Ferran", equipe2, "14", true);
-	Joueur remp22 = new JoueurChamp("ILIC", "Nemanja", equipe2, "19", false);
-	Joueur remp23 = new JoueurChamp("STEINS", "Luc", equipe2, "22", false);
-	Joueur remp24 = new JoueurChamp("TRIBILLON", "Gael", equipe2, "33", false);
-	Joueur remp25 = new JoueurChamp("BONILAURI", "Jordan", equipe2, "47", false);
-	Joueur remp26 = new JoueurChamp("ABDI", "Ayoub", equipe2, "87", false);
-	Joueur remp27 = new JoueurChamp("GIRAUDEAU", "Romain", equipe2, "11", false);
+	Joueur titu22 = new Joueur("LEVENTOUX", "Remi", equipe2, "2", true);
+	Joueur titu23 = new Joueur("CHELLE", "Pierrick", equipe2, "3", true);
+	Joueur titu24 = new Joueur("OLSSON", "Markus", equipe2, "4", true);
+	Joueur titu25 = new Joueur("GARCIA", "Arnau", equipe2, "9", true);
+	Joueur titu26 = new Joueur("GILBERT", "Maxime", equipe2, "10", true);
+	Joueur titu27 = new Joueur("SOLE", "Ferran", equipe2, "14", true);
+	Joueur remp22 = new Joueur("ILIC", "Nemanja", equipe2, "19", false);
+	Joueur remp23 = new Joueur("STEINS", "Luc", equipe2, "22", false);
+	Joueur remp24 = new Joueur("TRIBILLON", "Gael", equipe2, "33", false);
+	Joueur remp25 = new Joueur("BONILAURI", "Jordan", equipe2, "47", false);
+	Joueur remp26 = new Joueur("ABDI", "Ayoub", equipe2, "87", false);
+	Joueur remp27 = new Joueur("GIRAUDEAU", "Romain", equipe2, "11", false);
 	
 	@FXML
 	Text[] tituText = {t11, t12, t13, t14, t15, t16, t17, t21, t22, t23, t24, t25, t26, t27};
@@ -548,6 +548,10 @@ public class direct1Controller {
 				}
 			}
 			
+    	}
+    	if(!joueurSelectionne.isTitulaire()) {
+    		tirEq1.setDisable(true);
+    		tirEq2.setDisable(true);
     	}
     }
     
@@ -843,20 +847,40 @@ public class direct1Controller {
     
     @FXML
     private ImageView field;
+    @FXML
+    private Pane goalPane;
+    @FXML
+    private Text scoreEq1, scoreEq2;
+    
     
     public void tirClick (MouseEvent event) {
     	field.setVisible(true);
+    	field.setDisable(false);
     	cardsPane1.setDisable(true);
 		deuxMinEq1.setDisable(true);
 		tirEq1.setDisable(true);
 		cardsPane2.setDisable(true);
 		deuxMinEq2.setDisable(true);
 		tirEq2.setDisable(true);
+		
     }
     
     public void fieldClick (MouseEvent event) {
     	field.setDisable(true);
+    	goalPane.setVisible(true);
+    }
+    
+    public void goalButton (MouseEvent event) {
+    	joueurSelectionne.marquerBut();
+    	field.setVisible(false);
+    	goalPane.setVisible(false);
     	
+    	if(joueurSelectionne.getEquipe() == equipe1) {
+    		scoreEq1.setText(Integer.toString(equipe1.getNbPoints()));
+    	}
+    	else if(joueurSelectionne.getEquipe() == equipe2) {
+    		scoreEq2.setText(Integer.toString(equipe2.getNbPoints()));
+    	}
     }
     	
 }
