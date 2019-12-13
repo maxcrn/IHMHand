@@ -15,11 +15,10 @@ import javafx.scene.layout.BorderPane;
 
 public class accueilController {
 	@FXML
-	private Button button_match1;
+	private Button button_match1, button_classement1;
 
-	// Event Listener on Button[#button_match1].onAction
 	@FXML
-	public void pageDirect1(ActionEvent event) throws IOException {
+	public void pageDirect1() throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("direct1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
@@ -28,6 +27,18 @@ public class accueilController {
         stage.setScene(scene);
         stage.show();
         stage.setMaximized(true);
+		
+	}
+	
+	public void pageClassement1() throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("classement1.fxml"));
+        Scene scene2 = new Scene(fxmlLoader.load(), 600, 400);
+        Stage stage2 = new Stage();
+        stage2.setTitle("Classement LIDL StarLigue");
+        stage2.setScene(scene2);
+        stage2.show();
+        stage2.setMaximized(true);
 		
 	}
 }

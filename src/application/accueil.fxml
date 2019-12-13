@@ -21,11 +21,11 @@
                   <Image url="@../../Images/1200px-ProLigue_2016_logo.svg.png" />
                </image>
             </ImageView>
-            <Text layoutX="233.0" layoutY="884.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement" AnchorPane.bottomAnchor="175.93408203125" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="871.93310546875" />
             <Text layoutX="1205.0" layoutY="884.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement" AnchorPane.rightAnchor="604.0" />
             <Separator layoutX="956.0" layoutY="19.0" orientation="VERTICAL" prefHeight="1037.0" prefWidth="0.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="956.0" AnchorPane.topAnchor="19.0" />
             <Button fx:id="button_match1" layoutX="604.0" layoutY="869.0" mnemonicParsing="false" onAction="#pageDirect1" text="Match en direct" AnchorPane.leftAnchor="604.0" />
             <Button id="button_match2" layoutX="1653.0" layoutY="861.0" mnemonicParsing="false" text="Match en direct" AnchorPane.rightAnchor="233.0" />
+            <Button fx:id="button_classement1" layoutX="230.0" layoutY="869.0" mnemonicParsing="false" onMouseClicked="#pageClassement1" text="Classement" />
          </children>
       </AnchorPane>
    </children>

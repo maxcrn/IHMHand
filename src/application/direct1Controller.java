@@ -66,8 +66,14 @@ public class direct1Controller {
 	}
 	
 	public void startChrono() {
-		tempsMortD.setDisable(false);
-		tempsMortG.setDisable(false);
+		if(equipe1.getTempsMorts() > 0) {
+			tempsMortG.setDisable(false);
+		}
+		if(equipe2.getTempsMorts() > 0) {
+			tempsMortD.setDisable(false);
+		}
+
+		
 		if(paused) {
 	    	execSW = Executors.newSingleThreadScheduledExecutor();
 	    	execSW.scheduleAtFixedRate(stopWatch,1000,1000,TimeUnit.MILLISECONDS);
@@ -166,17 +172,17 @@ public class direct1Controller {
 	
 	public void pressTM1(MouseEvent event) {
 		startTM();
-		TMEquipe1 --;
+		equipe1.setTempsMorts(equipe1.getTempsMorts() - 1);
 		tempsMortG.setVisible(false);
 		tempsMortAnnuleG.setVisible(true);
 		tempsMortD.setDisable(true);
-		if(TMEquipe1 == 2) {
+		if(equipe1.getTempsMorts() == 2) {
 			tm1Equipe1.setVisible(false);
 		}
-		else if(TMEquipe1 == 1) {
+		else if(equipe1.getTempsMorts() == 1) {
 			tm2Equipe1.setVisible(false);
 		}
-		else if(TMEquipe1 == 0) {
+		else if(equipe1.getTempsMorts() == 0) {
 			tm3Equipe1.setVisible(false);
 			tempsMortG.setDisable(true);
 		}
@@ -184,17 +190,17 @@ public class direct1Controller {
 	
 	public void pressTM2(MouseEvent event) {
 		startTM();
-		TMEquipe2 --;
+		equipe2.setTempsMorts(equipe2.getTempsMorts() - 1);
 		tempsMortD.setVisible(false);
 		tempsMortAnnuleD.setVisible(true);
 		tempsMortG.setDisable(true);
-		if(TMEquipe2 == 2) {
+		if(equipe2.getTempsMorts() == 2) {
 			tm1Equipe2.setVisible(false);
 		}
-		else if(TMEquipe2 == 1) {
+		else if(equipe2.getTempsMorts() == 1) {
 			tm2Equipe2.setVisible(false);
 		}
-		else if(TMEquipe2 == 0) {
+		else if(equipe2.getTempsMorts() == 0) {
 			tm3Equipe2.setVisible(false);
 			tempsMortD.setDisable(true);
 		}
@@ -243,21 +249,31 @@ public class direct1Controller {
 		tempsMortAnnuleG.setVisible(false);
     	tempsMortD.setVisible(true);
     	tempsMortG.setVisible(true);
-    	tempsMortD.setDisable(false);
-    	tempsMortG.setDisable(false);
+    	if(equipe1.getTempsMorts() > 0) {
+    		tempsMortG.setDisable(false);
+    	}
+    	else {
+    		tempsMortG.setDisable(true);
+    	}
+    	if(equipe2.getTempsMorts() > 0) {
+    		tempsMortD.setDisable(false);
+    	}
+    	else {
+    		tempsMortD.setDisable(true);
+    	}
     }
     
     public void PressAnnuleTM1(MouseEvent event) {
     	tempsMortAnnuleG.setVisible(false);
     	tempsMortG.setVisible(true);
-    	TMEquipe1++;
-    	if(TMEquipe1 == 3) {
+    	equipe1.setTempsMorts(equipe1.getTempsMorts() + 1);
+    	if(equipe1.getTempsMorts() == 3) {
 			tm1Equipe1.setVisible(true);
 		}
-		else if(TMEquipe1 == 2) {
+		else if(equipe1.getTempsMorts() == 2) {
 			tm2Equipe1.setVisible(true);
 		}
-		else if(TMEquipe1 == 1) {
+		else if(equipe1.getTempsMorts() == 1) {
 			tm3Equipe1.setVisible(true);
 			tempsMortG.setDisable(false);
 		}
@@ -267,14 +283,14 @@ public class direct1Controller {
     public void PressAnnuleTM2(MouseEvent event) {
     	tempsMortAnnuleD.setVisible(false);
     	tempsMortD.setVisible(true);
-    	TMEquipe2++;
-    	if(TMEquipe2 == 3) {
+    	equipe2.setTempsMorts(equipe2.getTempsMorts() + 1);
+    	if(equipe2.getTempsMorts() == 3) {
 			tm1Equipe2.setVisible(true);
 		}
-		else if(TMEquipe2 == 2) {
+		else if(equipe2.getTempsMorts() == 2) {
 			tm2Equipe2.setVisible(true);
 		}
-		else if(TMEquipe2 == 1) {
+		else if(equipe2.getTempsMorts() == 1) {
 			tm3Equipe2.setVisible(true);
 			tempsMortD.setDisable(false);
 		}
@@ -849,7 +865,7 @@ public class direct1Controller {
     }
     
     public void annuler2MinutesEq2Click() {
-    	joueurDeuxMinEq1.setDeux_min(joueurDeuxMinEq1.getDeux_min() - 1);
+    	joueurDeuxMinEq2.setDeux_min(joueurDeuxMinEq2.getDeux_min() - 1);
     	Fin2MinEq2();
     }
     

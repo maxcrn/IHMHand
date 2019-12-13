@@ -8,13 +8,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
+<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="1918.0" style="-fx-background-color: DFDFDF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.direct1Controller">
   <children>
-    <Pane layoutY="17.0" prefHeight="155.0" prefWidth="312.0" AnchorPane.leftAnchor="805.0">
+      <AnchorPane layoutX="704.0" layoutY="-4.0" prefHeight="1096.0" prefWidth="525.0" style="-fx-background-color: #4F4F4F;">
+         <children>
+            <ImageView fx:id="field" fitHeight="228.0" fitWidth="334.0" layoutX="96.0" layoutY="291.0" onMouseClicked="#fieldClick" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../Images/field.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="15.0" layoutY="236.0" prefHeight="465.0" prefWidth="481.0" style="-fx-background-color: #113157; -fx-background-radius: 5em; -fx-border-radius: 5em;" />
+      <AnchorPane layoutX="758.0" layoutY="3.0" prefHeight="228.0" prefWidth="411.0" style="-fx-background-color: #CCA965; -fx-background-radius: 5em; -fx-border-radius: 5em;" />
+      <AnchorPane layoutX="764.0" layoutY="9.0" prefHeight="217.0" prefWidth="401.0" style="-fx-background-color: #6A6A6A; -fx-background-radius: 5em; -fx-border-radius: 5em;" />
+      <AnchorPane layoutX="1436.0" layoutY="235.0" prefHeight="465.0" prefWidth="481.0" style="-fx-background-color: #113157; -fx-background-radius: 5em; -fx-border-radius: 5em;" />
+    <Pane layoutX="803.0" layoutY="14.0" prefHeight="155.0" prefWidth="312.0" AnchorPane.leftAnchor="803.0">
       <children>
         <ImageView fitHeight="87.0" fitWidth="86.0" layoutX="226.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -26,7 +38,7 @@
             <Image url="@../../Images/Lidl_montpellier_logo.png" />
           </image>
         </ImageView>
-        <Text layoutX="147.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+        <Text fill="WHITE" layoutX="147.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
           <font>
             <Font size="48.0" />
           </font>
@@ -53,7 +65,7 @@
         </ImageView>
             <VBox alignment="CENTER" layoutX="175.0" layoutY="54.0" prefHeight="47.0" prefWidth="51.0">
                <children>
-              <Text fx:id="scoreEq2" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+              <Text fx:id="scoreEq2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                      <font>
                         <Font size="40.0" fx:id="x6" />
                      </font>
@@ -67,7 +79,7 @@
         </ImageView>
             <VBox alignment="CENTER" layoutX="86.0" layoutY="54.0" prefHeight="39.0" prefWidth="51.0">
                <children>
-              <Text fx:id="scoreEq1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+              <Text fx:id="scoreEq1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                 <font>
                   <Font size="40.0" fx:id="x1" />
                 </font>
@@ -81,9 +93,9 @@
         </ImageView>
       </children>
     </Pane>
-    <Pane layoutY="166.0" prefHeight="70.0" prefWidth="157.0" AnchorPane.leftAnchor="882.0">
+    <Pane layoutX="882.0" layoutY="166.0" prefHeight="70.0" prefWidth="157.0" AnchorPane.leftAnchor="882.0">
       <children>
-        <Text fx:id="seconds_chrono" font="$x1" layoutX="71.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
+        <Text fx:id="seconds_chrono" fill="WHITE" font="$x1" layoutX="71.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
         <ImageView fx:id="start_chrono" fitHeight="33.0" fitWidth="25.0" layoutX="127.0" layoutY="20.0" onMouseClicked="#pressStart" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../../Images/bouton-play.png" />
@@ -94,8 +106,8 @@
             <Image url="@../../Images/bouton-pause.png" />
           </image>
         </ImageView>
-        <Text fx:id="minutes_chrono" font="$x1" layoutX="8.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
-        <Text font="$x1" layoutX="58.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Text fx:id="minutes_chrono" fill="WHITE" font="$x1" layoutX="8.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
+        <Text fill="WHITE" font="$x1" layoutX="58.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
       </children>
     </Pane>
     <Button fx:id="tempsMortD" disable="true" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM2" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" AnchorPane.rightAnchor="85.0" />
@@ -104,22 +116,19 @@
     <Text layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" AnchorPane.rightAnchor="62.0" />
     <Pane fx:id="tmPane" prefHeight="39.0" prefWidth="263.0" visible="false" AnchorPane.leftAnchor="830.0" AnchorPane.topAnchor="230.0">
       <children>
-        <Text fx:id="seconds_tm" layoutX="217.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
-          <fill>
-            <Color blue="0.000" green="0.000" red="0.631" fx:id="x2" />
-          </fill>
+        <Text fx:id="seconds_tm" fill="#cca965" layoutX="217.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
           <font>
             <Font size="25.0" fx:id="x3" />
           </font>
         </Text>
-        <Text fx:id="minutes_tm" fill="$x2" font="$x3" layoutX="176.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
-        <Text fill="$x2" font="$x3" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps-Mort" />
-        <Text fill="$x2" font="$x3" layoutX="208.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
+        <Text fx:id="minutes_tm" fill="#cca965" font="$x3" layoutX="176.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
+        <Text fill="#cca965" font="$x3" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps-Mort" />
+        <Text fill="#cca965" font="$x3" layoutX="208.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" />
       </children>
     </Pane>
     <Button fx:id="tempsMortAnnuleD" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#PressAnnuleTM2" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #a10000;" text="Annuler" textFill="WHITE" visible="false" AnchorPane.rightAnchor="85.0" />
     <Button fx:id="tempsMortAnnuleG" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#PressAnnuleTM1" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #a10000;" text="Annuler" textFill="WHITE" visible="false" AnchorPane.leftAnchor="85.0" />
-    <SplitPane dividerPositions="0.5035128805620609" layoutY="253.0" prefHeight="416.0" prefWidth="429.0" AnchorPane.leftAnchor="29.0">
+    <SplitPane dividerPositions="0.5035128805620609" layoutX="52.0" layoutY="253.0" prefHeight="416.0" prefWidth="406.0" AnchorPane.leftAnchor="52.0">
       <items>
         <AnchorPane fx:id="rempEqu1" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
           <children>
@@ -347,24 +356,24 @@
         </Button>
       </children>
     </Pane>
-    <Pane fx:id="deuxMinEq1Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" visible="false" AnchorPane.leftAnchor="487.0">
+    <Pane fx:id="deuxMinEq1Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" AnchorPane.leftAnchor="487.0">
       <children>
         <Text font="$x1" layoutX="96.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" visible="true" />
         <Text id="minutes_chrono" fx:id="deuxMinEq1Sec" font="$x1" layoutX="105.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
         <Text id="minutes_chrono" fx:id="deuxMinEq1Min" disable="false" font="$x1" layoutX="53.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
       </children>
     </Pane>
-    <Pane id="" fx:id="deuxMinEq2Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" visible="false" AnchorPane.rightAnchor="487.0">
+    <Pane id="" fx:id="deuxMinEq2Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" AnchorPane.rightAnchor="487.0">
       <children>
         <Text font="$x1" layoutX="96.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" visible="true" />
         <Text id="minutes_chrono" fx:id="deuxMinEq2Sec" font="$x1" layoutX="105.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
         <Text id="minutes_chrono" fx:id="deuxMinEq2Min" font="$x1" layoutX="53.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
       </children>
     </Pane>
-    <Button fx:id="annulerCartonRouge1" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.leftAnchor="76.0" />
-    <Button fx:id="annulerCartonJaune1" layoutX="199.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
-    <Button fx:id="annulerCartonBleu1" layoutX="321.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
-    <Button fx:id="annulerCartonRouge2" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.rightAnchor="302.0" />
+    <Button fx:id="annulerCartonRouge1" layoutX="63.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.leftAnchor="63.0" />
+    <Button fx:id="annulerCartonJaune1" layoutX="195.0" layoutY="671.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
+    <Button fx:id="annulerCartonBleu1" layoutX="327.0" layoutY="671.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
+    <Button fx:id="annulerCartonRouge2" layoutX="1512.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#cartonRougeAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" AnchorPane.rightAnchor="311.0" />
     <Pane fx:id="cardsPane2" disable="true" layoutX="1490.0" layoutY="706.0" prefHeight="114.0" prefWidth="374.0">
       <children>
         <Button id="" fx:id="addRedCard2" layoutX="15.0" layoutY="0.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#addRedCard_Click" prefWidth="108.0" text="">
@@ -396,10 +405,10 @@
         </Button>
       </children>
     </Pane>
-    <Button fx:id="annulerCartonBleu2" layoutX="1760.0" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
-    <Button fx:id="annulerCartonJaune2" layoutX="1626.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
-    <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq1" layoutX="63.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq1Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
-    <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq2" layoutX="1708.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq2Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
+    <Button fx:id="annulerCartonBleu2" layoutX="1775.0" layoutY="674.0" mnemonicParsing="false" onMouseClicked="#cartonBleuAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
+    <Button fx:id="annulerCartonJaune2" layoutX="1643.0" layoutY="673.0" mnemonicParsing="false" onMouseClicked="#cartonJauneAnnule" style="-fx-background-color: #a10000;" text="Annuler carton" textFill="WHITE" visible="false" />
+    <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq1" layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq1Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
+    <Button id="annulerCartonRouge1" fx:id="annuler2MinutesEq2" layoutX="1280.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#annuler2MinutesEq2Click" style="-fx-background-color: #a10000;" text="Annuler 2 minutes" textFill="WHITE" visible="false" />
     <Button id="" fx:id="deuxMinEq1" disable="true" layoutX="321.0" layoutY="847.0" minWidth="108.0" mnemonicParsing="false" onMouseClicked="#deuxMinEq1Click" prefWidth="108.0" text="">
       <graphic>
         <ImageView id="deuxMinEq1" fitHeight="108.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
@@ -418,11 +427,6 @@
         </ImageView>
       </graphic>
     </Button>
-      <ImageView fx:id="field" fitHeight="198.0" fitWidth="297.0" layoutX="811.0" layoutY="294.0" onMouseClicked="#fieldClick" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../../Images/field.png" />
-         </image>
-      </ImageView>
       <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="123.0" text="">
          <graphic>
             <ImageView id="tirEq1" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
@@ -441,7 +445,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Pane fx:id="goalPane" layoutX="713.0" layoutY="536.0" prefHeight="452.0" prefWidth="493.0" visible="false">
+      <Pane fx:id="goalPane" layoutX="723.0" layoutY="543.0" prefHeight="452.0" prefWidth="493.0" visible="false">
          <children>
             <ImageView fitHeight="310.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -478,15 +482,15 @@
             </Button>
          </children>
       </Pane>
-      <Button fx:id="annulerTir1" layoutX="199.0" layoutY="975.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
-      <Button fx:id="annulerTirEnCours" layoutX="886.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir en cours" textFill="WHITE" visible="false" />
-      <Button fx:id="annulerTir2" layoutX="1648.0" layoutY="975.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
-      <Text fx:id="nb2Min1" layoutX="32.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+      <Button fx:id="annulerTir1" layoutX="205.0" layoutY="973.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
+      <Button fx:id="annulerTirEnCours" layoutX="559.0" layoutY="311.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir en cours" textFill="WHITE" visible="false" />
+      <Button fx:id="annulerTir2" layoutX="1656.0" layoutY="974.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir" textFill="WHITE" visible="false" />
+      <Text fx:id="nb2Min1" layoutX="32.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fx:id="nb2Min2" layoutX="1472.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+      <Text fx:id="nb2Min2" layoutX="1472.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
          <font>
             <Font size="16.0" />
          </font>
