@@ -29,7 +29,7 @@ public class direct1Controller {
 	
 	int i = 0;
 	@FXML
-	Text entraineur1Txt, entraineur2Txt;
+	Text entraineur1Txt, entraineur2Txt, arbitre1Txt, arbitre2Txt, chronometreurTxt, secretaireTxt, delegueTxt;
 	
 	@FXML
 	public void initialize() {
@@ -45,6 +45,11 @@ public class direct1Controller {
 		}
 		entraineur1Txt.setText("Entraineur de " + equipe1.getNomEquipe() + " : " + entraineur1.getPrenom().substring(0,1) + ". " + entraineur1.getNom());
 		entraineur2Txt.setText("Entraineur de " + equipe2.getNomEquipe() + " : " + entraineur2.getPrenom().substring(0,1) + ". " + entraineur2.getNom());
+		arbitre1Txt.setText("Arbitre : " + arbitre1.getPrenom().substring(0,1) + ". " + arbitre1.getNom());
+		arbitre2Txt.setText("Arbitre : " + arbitre2.getPrenom().substring(0,1) + ". " + arbitre2.getNom());
+		chronometreurTxt.setText("Chronométreur : " + chronometreur.getPrenom().substring(0,1) + ". " + chronometreur.getNom());
+		secretaireTxt.setText("Secrétaire : " + secretaire.getPrenom().substring(0,1) + ". " + secretaire.getNom());
+		delegueTxt.setText("Délégué : " + delegue.getPrenom().substring(0,1) + ". " + delegue.getNom());
 	}
 	
 
@@ -143,6 +148,12 @@ public class direct1Controller {
 			}
         	else{
         		changeText(minutes_chrono, Integer.toString(minutes));
+        	}
+        	if (minutes == 30 && seconds == 0) {
+        		pauseChrono();
+        	}
+        	if (minutes == 60) {
+        		pauseChrono();
         	}
         }
     };
@@ -551,7 +562,6 @@ public class direct1Controller {
 				else if(textClick.getText().equals(rempText[i].getText())) {
 					joueurSelectionne_Text = rempText[i];
 				}
-				System.out.println(joueurSelectionne.getNom());
 				if(joueurSelectionne.getEquipe() == equipe1 && joueurSelectionne != joueurDeuxMinEq1) {
 					cardsPane1.setDisable(false);
 					deuxMinEq1.setDisable(false);
@@ -633,13 +643,13 @@ public class direct1Controller {
 			deuxMinEq1.setDisable(true);
 			tirEq1.setDisable(true);
 			annulerButEq1.setDisable(true);
-			annulerTirEnCours.setVisible(false);
+			annulerTirEnCours1.setVisible(false);
+			annulerTirEnCours2.setVisible(false);
 			annulerTir1.setVisible(false);
 			annulerCartonRouge1.setVisible(false);
 			annulerCartonJaune1.setVisible(false);
 			annulerCartonBleu1.setVisible(false);
 			nb2Min1.setVisible(false);
-			
 			nb2Min2.setVisible(true);
 			nb2Min2.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
     	}
@@ -648,7 +658,8 @@ public class direct1Controller {
 			deuxMinEq2.setDisable(true);
 			tirEq2.setDisable(true);
 			annulerButEq2.setDisable(true);
-			annulerTirEnCours.setVisible(false);
+			annulerTirEnCours1.setVisible(false);
+			annulerTirEnCours2.setVisible(false);
 			annulerTir2.setVisible(false);
 			annulerCartonRouge2.setVisible(false);
 			annulerCartonJaune2.setVisible(false);
@@ -660,7 +671,6 @@ public class direct1Controller {
     	}
     	
     	joueurSelectionne_Text.setStyle("-fx-font-weight: bold;" + "-fx-font-size: 19px");
-    	System.out.println(joueurSelectionne_Text.getText());
     }
     
     
@@ -817,7 +827,6 @@ public class direct1Controller {
         	if(joueurDeuxMinEq1.getDeux_min() == 3) {
         		addRedCard_Click();
         	}
-//        	joueurDeuxMinEq1Text.setDisable(true);
     	}
     	else if(joueurSelectionne.getEquipe() == equipe2){
     		joueurDeuxMinEq2 = joueurSelectionne;
@@ -831,7 +840,6 @@ public class direct1Controller {
         	if(joueurDeuxMinEq2.getDeux_min() == 3) {
         		addRedCard_Click();
         	}
-//        	joueurDeuxMinEq2Text.setDisable(true);
     	}
     }
     
@@ -927,7 +935,7 @@ public class direct1Controller {
     @FXML
     private Text scoreEq1, scoreEq2;
     @FXML
-    private Button annulerButEq1, annulerButEq2, tirRate, annulerTir1, annulerTir2, annulerTirEnCours;
+    private Button annulerButEq1, annulerButEq2, tirRate, annulerTir1, annulerTir2, annulerTirEnCours1, annulerTirEnCours2;
     
     
     public void tirClick (MouseEvent event) {
@@ -935,7 +943,13 @@ public class direct1Controller {
     	field.setDisable(false);
     	joueurSelectionne.setTirs(joueurSelectionne.getTirs() + 1);
     	disable();
-    	annulerTirEnCours.setVisible(true);
+    	if(joueurSelectionne.getEquipe() == equipe1) {
+    		annulerTirEnCours1.setVisible(true);
+    	}
+    	else if(joueurSelectionne.getEquipe() == equipe2) {
+    		annulerTirEnCours2.setVisible(true);
+    	}
+    	
     }
     
     public void fieldClick (MouseEvent event) {
@@ -986,7 +1000,8 @@ public class direct1Controller {
 		annulerButEq2.setDisable(true);
 		annulerTir1.setVisible(false);
 		annulerTir2.setVisible(false);
-		annulerTirEnCours.setVisible(false);
+		annulerTirEnCours1.setVisible(false);
+		annulerTirEnCours2.setVisible(false);
     }
     
     public void tirArretClick() {
@@ -1020,7 +1035,8 @@ public class direct1Controller {
     public void annulerTirClick(MouseEvent event) {
     	field.setVisible(false);
     	goalPane.setVisible(false);
-    	annulerTirEnCours.setVisible(false);
+    	annulerTirEnCours1.setVisible(false);
+    	annulerTirEnCours2.setVisible(false);
     	annulerTir1.setVisible(false);
     	annulerTir2.setVisible(false);
     	if (joueurSelectionne.getTirs() > 0 ) {
