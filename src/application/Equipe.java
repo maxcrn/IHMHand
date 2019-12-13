@@ -10,6 +10,9 @@ public class Equipe {
 	private int nbPoints;
 	private int tempsMorts;
 	private String ligue;
+	private int joues;
+	private int diff;
+	private int positionClassement;
 	
 	public Equipe (String nomEquipe, Personne entraineur, String ligue) {
 		this.setNomEquipe(nomEquipe);
@@ -20,6 +23,41 @@ public class Equipe {
 		this.egalite = 0;
 		this.nbPoints = 0;
 		this.tempsMorts = 3;
+	}
+	
+	public Equipe(int positionClassement, String nomEquipe, int nbPoints, int joues, int victoire, int egalite, int defaite, int diff) {
+		this.positionClassement = positionClassement;
+		this.nomEquipe = nomEquipe;
+		this.nbPoints = nbPoints;
+		this.joues = joues;
+		this.victoire = victoire;
+		this.egalite = egalite;
+		this.defaite = defaite;
+		this.diff = diff;
+	}
+
+	public int getJoues() {
+		return joues;
+	}
+
+	public void setJoues(int joues) {
+		this.joues = joues;
+	}
+
+	public int getDiff() {
+		return diff;
+	}
+
+	public void setDiff(int diff) {
+		this.diff = diff;
+	}
+
+	public int getPositionClassement() {
+		return positionClassement;
+	}
+
+	public void setPositionClassement(int positionClassement) {
+		this.positionClassement = positionClassement;
 	}
 	
 	public String getNomEquipe() {
