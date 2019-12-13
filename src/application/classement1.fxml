@@ -4,19 +4,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.classement1Controller">
    <children>
-      <AnchorPane prefHeight="768.0" prefWidth="200.0" style="-fx-background-color: #2b5a8b;">
+      <AnchorPane prefHeight="768.0" prefWidth="200.0" style="-fx-background-color: #cca965;">
          <children>
-            <ImageView fx:id="classement" fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="56.0" onMouseClicked="#classementClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="classement" fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="57.0" onMouseClicked="#classementClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/classement.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="224.0" onMouseClicked="#classementTirClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="223.0" onMouseClicked="#classementTirClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/classementTirs.png.png" />
                </image>
@@ -33,32 +33,839 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Pane fx:id="classementPane" layoutX="201.0" prefHeight="768.0" prefWidth="825.0">
+      <Pane fx:id="classementPane" layoutX="195.0" prefHeight="774.0" prefWidth="831.0" visible="false">
          <children>
-            <Text layoutX="396.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement Lidl Starligue" />
-            <VBox alignment="CENTER" layoutX="43.0" layoutY="52.0" prefHeight="728.0" prefWidth="100.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" wrappingWidth="28.7294921875" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" wrappingWidth="28.7294921875" />
-               </children>
-            </VBox>
+            <AnchorPane layoutY="-2.0" prefHeight="774.0" prefWidth="831.0" style="-fx-background-color: #113157;" />
+            <Text fill="#cca965" layoutX="295.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLASSEMENT">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/parisLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/nimeLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/nantesLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/Lidl_montpellier_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/Lidl_toulouse_logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/aixLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/dunkerqueLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/straphaelLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/istresLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/chamberyLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/chartresLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="580.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/ivryLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="624.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/tremblayLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="44.0" layoutX="145.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/creteilLogo.png" />
+               </image>
+            </ImageView>
+            <Text fill="#cca965" layoutX="122.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="122.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="116.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="116.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="116.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="116.0" layoutY="656.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="116.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" wrappingWidth="28.7294921875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PARIS">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIMES">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NANTES">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTPELLIER">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOULOUSE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AIX">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DUNQUERKE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAINT-RAPHAEL">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISTRES">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHAMBERY">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHARTRES">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IVRY">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TREMBLAY">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="205.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRETEIL">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="356.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PTS" />
+            <Text fill="WHITE" layoutX="404.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MJ" />
+            <Text fill="WHITE" layoutX="445.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V." />
+            <Text fill="WHITE" layoutX="478.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N." />
+            <Text fill="WHITE" layoutX="519.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D." />
+            <Text fill="WHITE" layoutX="552.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BP" />
+            <Text fill="#cca965" layoutX="354.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="354.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="357.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="400.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="439.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="442.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="513.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="516.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="593.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BC" />
+            <Text fill="WHITE" layoutX="587.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="590.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="627.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DIFF" />
+            <Text fill="WHITE" layoutX="623.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="623.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="865.0" fitWidth="746.0" layoutX="31.0" layoutY="104.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/1280px-Lidlstarligue_logo_2016.svg.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="548.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="474.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="548.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <Pane fx:id="classementTirPane" layoutX="199.0" layoutY="-2.0" prefHeight="774.0" prefWidth="825.0" visible="false">
+      <Pane fx:id="classementTirPane" layoutX="199.0" layoutY="-2.0" prefHeight="774.0" prefWidth="825.0" style="-fx-background-color: #113157;">
          <children>
-            <Text layoutX="224.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement Tirs" />
+            <AnchorPane layoutX="67.0" layoutY="197.0" prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #cca965;" />
+            <AnchorPane layoutX="288.0" layoutY="197.0" prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #cca965;" />
+            <AnchorPane layoutX="509.0" layoutY="196.0" prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #cca965;" />
+            <Text fill="#cca965" layoutX="203.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLASSEMENT BUTEURS">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/buteur1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/buteur2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="521.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/buteur3.png" />
+               </image>
+            </ImageView>
+            <Text fill="#cca965" layoutX="156.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="377.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
+            <Text fill="#cca965" layoutX="598.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Pane fx:id="classementArretPane" layoutX="199.0" prefHeight="768.0" prefWidth="825.0" visible="false">
