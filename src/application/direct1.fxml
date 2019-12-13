@@ -510,9 +510,9 @@
          <children>
             <Text fx:id="arbitre2Txt" layoutX="11.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbitre :" />
             <Text fx:id="secretaireTxt" layoutX="195.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secrétaire :" />
-            <Text fx:id="chronometreurTxt" layoutX="195.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chronométreur :" />
+            <Text fx:id="chronometreurTxt" layoutX="195.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chronometreur :" />
             <Text fx:id="arbitre1Txt" layoutX="11.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbitre :" />
-            <Text fx:id="delegueTxt" layoutX="11.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Délégué :" />
+            <Text fx:id="delegueTxt" layoutX="11.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delegue :" />
          </children>
       </Pane>
       <Button fx:id="annulerTirEnCours2" layoutX="1258.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#annulerTirClick" style="-fx-background-color: #a10000;" text="Annuler tir en cours" textFill="WHITE" visible="false" />

@@ -47,9 +47,9 @@ public class direct1Controller {
 		entraineur2Txt.setText("Entraineur de " + equipe2.getNomEquipe() + " : " + entraineur2.getPrenom().substring(0,1) + ". " + entraineur2.getNom());
 		arbitre1Txt.setText("Arbitre : " + arbitre1.getPrenom().substring(0,1) + ". " + arbitre1.getNom());
 		arbitre2Txt.setText("Arbitre : " + arbitre2.getPrenom().substring(0,1) + ". " + arbitre2.getNom());
-		chronometreurTxt.setText("Chronométreur : " + chronometreur.getPrenom().substring(0,1) + ". " + chronometreur.getNom());
-		secretaireTxt.setText("Secrétaire : " + secretaire.getPrenom().substring(0,1) + ". " + secretaire.getNom());
-		delegueTxt.setText("Délégué : " + delegue.getPrenom().substring(0,1) + ". " + delegue.getNom());
+		chronometreurTxt.setText("Chronometreur : " + chronometreur.getPrenom().substring(0,1) + ". " + chronometreur.getNom());
+		secretaireTxt.setText("Secretaire : " + secretaire.getPrenom().substring(0,1) + ". " + secretaire.getNom());
+		delegueTxt.setText("Delegue : " + delegue.getPrenom().substring(0,1) + ". " + delegue.getNom());
 	}
 	
 
@@ -409,7 +409,6 @@ public class direct1Controller {
 	Joueur[] tituJoueur = {titu11, titu12, titu13, titu14, titu15, titu16, titu17, titu21, titu22, titu23, titu24, titu25, titu26, titu27};
     
     public void dragDetected(MouseEvent event) {
-    	
     	Text textDragged = (Text) event.getSource();
     	
     	/* allow any transfer mode */
@@ -430,40 +429,53 @@ public class direct1Controller {
     }
     
     public void dragDropped(DragEvent event) {
-    	Joueur tituRemp = titu11;
-    	Joueur rempTitu = titu21;
+    	Joueur joueurRemp1 = null;
+    	Joueur joueurRemp2 = null;
     	Text target = (Text) event.getGestureTarget();
     	Text source = (Text) event.getGestureSource();
     	
         
         for(i = 0; i < 14; i++) {
 			if(source.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
-				tituRemp = tituJoueur[i];
+				joueurRemp1 = tituJoueur[i];
 			}
 			else if(source.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())){
-				rempTitu = rempJoueur[i];
+				joueurRemp1 = rempJoueur[i];
 			}
 		}
         for(i = 0; i < 14; i++) {
 			if(target.getText().equals(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom())) {
-				tituRemp = tituJoueur[i];
+				joueurRemp2 = tituJoueur[i];
 			}
 			else if(target.getText().equals(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom())){
-				rempTitu = rempJoueur[i];
+				joueurRemp2 = rempJoueur[i];
 			}
 		}
         
-        if(tituRemp.getEquipe() == rempTitu.getEquipe() && rempTitu.isTitulaire() != tituRemp.isTitulaire() && tituRemp.getCarton_rouge() == 0 
-        		&& rempTitu.getCarton_rouge() == 0 && tituRemp.getCarton_bleu() == 0 && rempTitu.getCarton_bleu() == 0 
-        		&& rempTitu != joueurDeuxMinEq2 && rempTitu != joueurDeuxMinEq1 && tituRemp != joueurDeuxMinEq2 && tituRemp != joueurDeuxMinEq1) {
-        	tituRemp.setTitulaire(!tituRemp.isTitulaire());
-        	rempTitu.setTitulaire(!rempTitu.isTitulaire());
+        if(joueurRemp1.getEquipe() == joueurRemp2.getEquipe() && joueurRemp1.isTitulaire() != joueurRemp2.isTitulaire() && joueurRemp1.getCarton_rouge() == 0 
+        		&& joueurRemp2.getCarton_rouge() == 0 && joueurRemp1.getCarton_bleu() == 0 && joueurRemp2.getCarton_bleu() == 0 
+        		&& joueurRemp1 != joueurDeuxMinEq2 && joueurRemp2 != joueurDeuxMinEq1 && joueurRemp1 != joueurDeuxMinEq2 && joueurRemp2 != joueurDeuxMinEq1) {
+        	joueurRemp1.setTitulaire(!joueurRemp1.isTitulaire());
+        	joueurRemp2.setTitulaire(!joueurRemp2.isTitulaire());
         	String tempTxt = target.getText();
         	source.setText(tempTxt);
         	Dragboard db = event.getDragboard();
             if (db.hasString()) {
                 target.setText(db.getString());
             }
+        }
+        
+        if(joueurRemp1.getCarton_jaune()==1 || joueurRemp1.getCarton_jaune()==3 || joueurRemp1.getCarton_jaune()==5) {
+        	source.setFill(Color.GOLD);
+    	}
+        else {
+        	source.setFill(Color.BLACK);
+        }
+        if(joueurRemp2.getCarton_jaune()==1 || joueurRemp2.getCarton_jaune()==3 || joueurRemp2.getCarton_jaune()==5) {
+        	target.setFill(Color.GOLD);
+        }
+        else {
+        	target.setFill(Color.BLACK);
         }
     }
     
@@ -670,6 +682,12 @@ public class direct1Controller {
 			nb2Min1.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
     	}
     	
+    	if(joueurSelectionne.getCarton_jaune() == 1 || joueurSelectionne.getCarton_jaune() == 3 || joueurSelectionne.getCarton_jaune() == 5) {
+			joueurSelectionne_Text.setFill(Color.GOLD);
+    	}
+    	else {
+    		joueurSelectionne_Text.setFill(Color.BLACK);
+    	}
     	joueurSelectionne_Text.setStyle("-fx-font-weight: bold;" + "-fx-font-size: 19px");
     }
     

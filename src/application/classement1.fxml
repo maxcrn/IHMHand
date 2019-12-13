@@ -7,43 +7,61 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="794.0" prefWidth="1155.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.classement1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.classement1Controller">
    <children>
-      <AnchorPane prefHeight="802.0" prefWidth="200.0" style="-fx-background-color: #2b5a8b;">
+      <AnchorPane prefHeight="768.0" prefWidth="200.0" style="-fx-background-color: #2b5a8b;">
          <children>
-            <ImageView fx:id="classement" fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="34.0" onMouseClicked="#classementClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="classement" fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="56.0" onMouseClicked="#classementClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/classement.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="177.0" onMouseClicked="#classementTirClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="224.0" onMouseClicked="#classementTirClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/classementTirs.png.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="322.0" onMouseClicked="#classementArretClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="120.0" fitWidth="119.0" layoutX="41.0" layoutY="384.0" onMouseClicked="#classementArretClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/classementGardien.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="140.0" fitWidth="120.0" layoutX="41.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/calendrier.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Pane fx:id="classementPane" layoutX="201.0" prefHeight="794.0" prefWidth="957.0">
+      <Pane fx:id="classementPane" layoutX="201.0" prefHeight="768.0" prefWidth="825.0">
          <children>
             <Text layoutX="396.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement Lidl Starligue" />
-            <VBox layoutX="43.0" layoutY="52.0" prefHeight="728.0" prefWidth="100.0">
+            <VBox alignment="CENTER" layoutX="43.0" layoutY="52.0" prefHeight="728.0" prefWidth="100.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" wrappingWidth="28.7294921875" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" wrappingWidth="28.7294921875" />
                </children>
             </VBox>
          </children>
       </Pane>
-      <Pane fx:id="classementTirPane" layoutX="199.0" layoutY="-2.0" prefHeight="486.0" prefWidth="536.0" visible="false">
+      <Pane fx:id="classementTirPane" layoutX="199.0" layoutY="-2.0" prefHeight="774.0" prefWidth="825.0" visible="false">
          <children>
             <Text layoutX="224.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement Tirs" />
          </children>
       </Pane>
-      <Pane fx:id="classementArretPane" layoutX="199.0" prefHeight="474.0" prefWidth="524.0" visible="false">
+      <Pane fx:id="classementArretPane" layoutX="199.0" prefHeight="768.0" prefWidth="825.0" visible="false">
          <children>
             <Text layoutX="224.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement Arrets" wrappingWidth="119.7802734375" />
          </children>
