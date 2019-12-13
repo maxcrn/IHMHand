@@ -827,6 +827,7 @@ public class direct1Controller {
         	if(joueurDeuxMinEq1.getDeux_min() == 3) {
         		addRedCard_Click();
         	}
+        	nb2Min1.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
     	}
     	else if(joueurSelectionne.getEquipe() == equipe2){
     		joueurDeuxMinEq2 = joueurSelectionne;
@@ -840,6 +841,7 @@ public class direct1Controller {
         	if(joueurDeuxMinEq2.getDeux_min() == 3) {
         		addRedCard_Click();
         	}
+        	nb2Min2.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
     	}
     }
     
@@ -855,6 +857,8 @@ public class direct1Controller {
 		annuler2MinutesEq1.setVisible(false);
 		joueurDeuxMinEq1Text = null;
 		joueurDeuxMinEq1 = null;
+    	nb2Min1.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
+
     }
     
     private void Fin2MinEq2() {
@@ -869,6 +873,7 @@ public class direct1Controller {
 		annuler2MinutesEq2.setVisible(false);
 		joueurDeuxMinEq2Text = null;
 		joueurDeuxMinEq2 = null;
+    	nb2Min2.setText("Nombre de 2 minutes de " + joueurSelectionne.getPrenom().substring(0,1) + ". " + joueurSelectionne.getNom() + " : " + joueurSelectionne.getDeux_min());
     }
     
     public void annuler2MinutesEq1Click() {
