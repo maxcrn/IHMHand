@@ -112,8 +112,14 @@
     </Pane>
     <Button fx:id="tempsMortD" disable="true" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM2" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" AnchorPane.rightAnchor="85.0" />
     <Button fx:id="tempsMortG" disable="true" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#pressTM1" prefHeight="26.0" prefWidth="97.0" text="Temps Mort" AnchorPane.leftAnchor="85.0" />
-    <Text layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" AnchorPane.leftAnchor="32.0" />
-    <Text layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" AnchorPane.rightAnchor="62.0" />
+    <Text fx:id="entraineur1Txt" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :" AnchorPane.leftAnchor="32.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+    <Text fx:id="entraineur2Txt" layoutX="1473.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entraineur :">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
     <Pane fx:id="tmPane" prefHeight="39.0" prefWidth="263.0" visible="false" AnchorPane.leftAnchor="830.0" AnchorPane.topAnchor="230.0">
       <children>
         <Text fx:id="seconds_tm" fill="#cca965" layoutX="217.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
@@ -427,7 +433,7 @@
         </ImageView>
       </graphic>
     </Button>
-      <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="123.0" text="">
+      <Button id="" fx:id="annulerButEq1" disable="true" layoutX="43.0" layoutY="847.0" minWidth="123.0" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefHeight="118.0" prefWidth="124.0" text="">
          <graphic>
             <ImageView id="tirEq1" fitHeight="107.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -436,7 +442,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button id="" fx:id="annulerButEq2" disable="true" layoutX="1772.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefWidth="122.54998779296875" text="">
+      <Button id="" fx:id="annulerButEq2" disable="true" layoutX="1771.0" layoutY="847.0" minWidth="122.54998779296875" mnemonicParsing="false" onMouseClicked="#annulerButClick" prefHeight="118.0" prefWidth="124.0" text="">
          <graphic>
             <ImageView id="tirEq2" disable="true" fitHeight="108.0" fitWidth="124.0" onMouseClicked="#annulerButClick" pickOnBounds="true" preserveRatio="true">
                <image>

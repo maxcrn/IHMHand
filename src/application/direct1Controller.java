@@ -28,6 +28,8 @@ public class direct1Controller {
 	
 	
 	int i = 0;
+	@FXML
+	Text entraineur1Txt, entraineur2Txt;
 	
 	@FXML
 	public void initialize() {
@@ -41,6 +43,8 @@ public class direct1Controller {
 			tituText[i].setText(tituJoueur[i].getNumero() + " " + tituJoueur[i].getPrenom().substring(0, 1) + ". " + tituJoueur[i].getNom());
 			rempText[i].setText(rempJoueur[i].getNumero() + " " + rempJoueur[i].getPrenom().substring(0, 1) + ". " + rempJoueur[i].getNom());
 		}
+		entraineur1Txt.setText("Entraineur de " + equipe1.getNomEquipe() + " : " + entraineur1.getPrenom().substring(0,1) + ". " + entraineur1.getNom());
+		entraineur2Txt.setText("Entraineur de " + equipe2.getNomEquipe() + " : " + entraineur2.getPrenom().substring(0,1) + ". " + entraineur2.getNom());
 	}
 	
 
