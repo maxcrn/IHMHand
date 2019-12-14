@@ -11,18 +11,26 @@ public class classement1Controller {
 ///////////  Classement Ligue /////////////
 	
 	@FXML
-	private Pane classementPane, classementTirPane, classementArretPane;
+	private Pane classementPane, classementTirPane, classementArretPane, calendrierPane, statsMatchPane, statsEquipePane;
 	
 	public void classementClick() {
 		classementPane.setVisible(true);
 		classementTirPane.setVisible(false);
 		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(false);
 	}
 	
 	
 	@FXML
 	public void initialize() {
-		
+		classementPane.setVisible(false);
+		classementTirPane.setVisible(false);
+		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(false);
 	}
 	
 	
@@ -32,14 +40,49 @@ public class classement1Controller {
 		classementPane.setVisible(false);
 		classementTirPane.setVisible(true);
 		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(false);
 	}
 	
 	
-///////////  Classement Arrêts /////////////
+///////////  Classement Arrets /////////////
 	
 	public void classementArretClick() {
 		classementPane.setVisible(false);
 		classementTirPane.setVisible(false);
 		classementArretPane.setVisible(true);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(false);
+	}
+	
+///////////  Calendrier /////////////
+	
+	public void calendrierClick() {
+		classementPane.setVisible(false);
+		classementTirPane.setVisible(false);
+		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(true);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(false);
+	}
+	
+	public void statsMatchClick() {
+		classementPane.setVisible(false);
+		classementTirPane.setVisible(false);
+		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(true);
+		statsEquipePane.setVisible(false);
+	}
+	
+	public void statsEquipePaneClick() {
+		classementPane.setVisible(false);
+		classementTirPane.setVisible(false);
+		classementArretPane.setVisible(false);
+		calendrierPane.setVisible(false);
+		statsMatchPane.setVisible(false);
+		statsEquipePane.setVisible(true);
 	}
 }

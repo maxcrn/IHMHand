@@ -23,7 +23,7 @@ public class accueilController {
         fxmlLoader.setLocation(getClass().getResource("direct1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
-        stage.setTitle("Direct LIDL StarLigue");
+        stage.setTitle("Match en Direct LIDL StarLigue");
         stage.setScene(scene);
         stage.show();
         stage.setMaximized(true);
@@ -33,12 +33,12 @@ public class accueilController {
 	public void pageClassement1() throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("classement1.fxml"));
-        Scene scene2 = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene2 = new Scene(fxmlLoader.load(), 1024, 768);
         Stage stage2 = new Stage();
-        stage2.setTitle("Classement LIDL StarLigue");
+        stage2.setTitle("Classement et Calendrier LIDL StarLigue");
         stage2.setScene(scene2);
         stage2.show();
-        stage2.setMaximized(true);
+        //stage2.setMaximized(true);
 		
 	}
 }

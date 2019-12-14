@@ -367,14 +367,14 @@
         </Button>
       </children>
     </Pane>
-    <Pane fx:id="deuxMinEq1Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" AnchorPane.leftAnchor="487.0">
+    <Pane fx:id="deuxMinEq1Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" visible="false" AnchorPane.leftAnchor="487.0">
       <children>
         <Text font="$x1" layoutX="96.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" visible="true" />
         <Text id="minutes_chrono" fx:id="deuxMinEq1Sec" font="$x1" layoutX="105.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
         <Text id="minutes_chrono" fx:id="deuxMinEq1Min" disable="false" font="$x1" layoutX="50.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
       </children>
     </Pane>
-    <Pane id="" fx:id="deuxMinEq2Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" AnchorPane.rightAnchor="487.0">
+    <Pane id="" fx:id="deuxMinEq2Pane" layoutY="44.0" prefHeight="102.0" prefWidth="200.0" visible="false" AnchorPane.rightAnchor="487.0">
       <children>
         <Text font="$x1" layoutX="96.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" visible="true" />
         <Text id="minutes_chrono" fx:id="deuxMinEq2Sec" font="$x1" layoutX="105.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" />
@@ -506,7 +506,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Pane layoutX="1470.0" layoutY="25.0" prefHeight="133.0" prefWidth="427.0">
+      <Pane layoutX="1470.0" layoutY="25.0" prefHeight="114.0" prefWidth="427.0">
          <children>
             <Text fx:id="arbitre2Txt" layoutX="11.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arbitre :" />
             <Text fx:id="secretaireTxt" layoutX="195.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secrétaire :" />

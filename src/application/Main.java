@@ -17,6 +17,7 @@ public class Main extends Application {
 			primaryStage.setScene(new javafx.scene.Scene(javafx.fxml.FXMLLoader.load(getClass().getResource("accueil.fxml"))));
 			primaryStage.show();
 			primaryStage.setMaximized(true);
+			primaryStage.setTitle("LNH Game Manager");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
